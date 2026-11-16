@@ -14,6 +14,22 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const err = params.get("error");
+      if (err === "google_not_configured") {
+        setErrorMessage(
+          "Koneksi Google Sign-In asli memerlukan GOOGLE_CLIENT_ID dan GOOGLE_CLIENT_SECRET di file .env.local atau Vercel. Silakan masukkan kunci Google Cloud Anda."
+        );
+      } else if (err === "google_auth_failed") {
+        setErrorMessage("Otentikasi dengan akun Google dibatalkan atau gagal.");
+      } else if (err === "google_server_error") {
+        setErrorMessage("Terjadi kesalahan saat memproses akun Google Anda.");
+      }
+    }
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage("");

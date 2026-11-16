@@ -5,8 +5,9 @@ export const dynamic = "force-dynamic";
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const redirectTarget = searchParams.get("redirect") || "/";
+  const from = searchParams.get("from") || "login";
 
-  // Dapatkan Base URL dinamis (bisa localhost atau domain Vercel production)
+  // Dapatkan Base URL dinamis (localhost atau URL Vercel production)
   const host = request.headers.get("x-forwarded-host") || request.headers.get("host") || "localhost:3000";
   const proto = request.headers.get("x-forwarded-proto") || (host.startsWith("localhost") ? "http" : "https");
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || `${proto}://${host}`;
@@ -14,8 +15,8 @@ export async function GET(request: Request) {
   const clientId = process.env.GOOGLE_CLIENT_ID;
   const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
 
-  // Jika Google Client ID sudah dikonfigurasi, arahkan ke Google OAuth 2.0 resmi
-  if (clientId && clientSecret && clientId !== "YOUR_GOOGLE_CLIENT_ID") {
+  // Jika Google Client ID sudah ada, arahkan langsung ke server otentikasi Google asli
+  if (clientId && clientSecret && clientId.trim() !== "") {
     const redirectUri = `${baseUrl}/api/auth/google/callback`;
     const state = Buffer.from(JSON.stringify({ redirect: redirectTarget })).toString("base64");
 
@@ -31,9 +32,8 @@ export async function GET(request: Request) {
     return NextResponse.redirect(googleAuthUrl.toString());
   }
 
-  // Jika belum dikonfigurasi, alihkan ke halaman simulasi / demo Google login
-  // agar pengguna dan tester bisa langsung mencoba pengalaman login Google tanpa terblokir
-  const demoUrl = new URL("/auth/google-demo", request.url);
-  demoUrl.searchParams.set("redirect", redirectTarget);
-  return NextResponse.redirect(demoUrl.toString());
+  // Jika belum diisi, arahkan kembali ke form login/register dengan peringatan yang jelas
+  const fallbackUrl = new URL(from === "register" ? "/register" : "/login", request.url);
+  fallbackUrl.searchParams.set("error", "google_not_configured");
+  return NextResponse.redirect(fallbackUrl.toString());
 }
