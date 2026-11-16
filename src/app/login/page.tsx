@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Logo } from "@/components/Logo";
-import { ArrowLeft, Lock, Mail, AlertCircle, Loader2, KeyRound } from "lucide-react";
+import { ArrowLeft, Lock, Mail, AlertCircle, Loader2 } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -45,10 +45,7 @@ export default function LoginPage() {
     }
   };
 
-  const fillAdminCredentials = () => {
-    setEmail("admin@gmail.com");
-    setPassword("123456");
-  };
+
 
   return (
     <div className="min-h-screen bg-paper-canvas flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -80,26 +77,6 @@ export default function LoginPage() {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-paper-subtle/50 py-8 px-6 shadow-card sm:rounded-2xl sm:px-10 border border-paper-border">
-          {/* Quick Demo Fill Helper */}
-          <div className="mb-6 p-3.5 rounded-xl bg-surface-container border border-paper-border/80 text-xs">
-            <div className="flex items-center justify-between mb-1">
-              <span className="font-semibold text-espresso-deep flex items-center gap-1.5">
-                <KeyRound className="w-3.5 h-3.5 text-terracotta" />
-                Akun Admin Bawaan
-              </span>
-              <button
-                type="button"
-                onClick={fillAdminCredentials}
-                className="text-terracotta hover:text-terracotta-hover font-bold hover:underline"
-              >
-                Gunakan Ini
-              </button>
-            </div>
-            <p className="text-secondary text-[11px]">
-              Email: <code>admin@gmail.com</code> | Sandi: <code>123456</code>
-            </p>
-          </div>
-
           {errorMessage && (
             <div
               role="alert"
