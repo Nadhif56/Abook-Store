@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Logo } from "@/components/Logo";
+import { GoogleAuthButton } from "@/components/GoogleAuthButton";
 import { ArrowLeft, Lock, Mail, AlertCircle, Loader2 } from "lucide-react";
 
 export default function LoginPage() {
@@ -77,6 +78,21 @@ export default function LoginPage() {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-paper-subtle/50 py-8 px-6 shadow-card sm:rounded-2xl sm:px-10 border border-paper-border">
+          {/* Opsi Cepat: Masuk dengan Akun Google */}
+          <div className="mb-6">
+            <GoogleAuthButton mode="login" />
+            <div className="relative my-6">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-paper-border" />
+              </div>
+              <div className="relative flex justify-center text-xs">
+                <span className="bg-paper-subtle px-3 text-secondary font-medium uppercase tracking-wider">
+                  atau masuk dengan email
+                </span>
+              </div>
+            </div>
+          </div>
+
           {errorMessage && (
             <div
               role="alert"

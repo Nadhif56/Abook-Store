@@ -30,7 +30,7 @@ Browser -> Next.js Server (API Route) -> Google Apps Script Web App -> Google Sp
 1. Pada dropdown fungsi di bagian atas editor Apps Script, pilih fungsi **`initTables`**.
 2. Klik tombol **Run / Jalankan**.
 3. Google akan meminta izin otorisasi akses spreadsheet pertama kali. Klik *Review Permissions* > Pilih akun Google Anda > *Advanced* > *Go to Untitled project (unsafe)* > *Allow*.
-4. Periksa Google Spreadsheet Anda: Tiga sheet (`Roles`, `Users`, dan `News`) otomatis dibuat lengkap dengan header kolom dan akun administrator awal.
+4. Periksa Google Spreadsheet Anda: Empat sheet (`Roles`, `Users`, `News`, dan `Orders`) otomatis dibuat lengkap dengan header kolom dan akun administrator awal.
 
 ### Langkah D: Atur Script Properties (Kunci Rahasia)
 1. Di menu sisi kiri Apps Script, klik ikon gerigi **Project Settings**.
@@ -63,18 +63,41 @@ NEXT_PUBLIC_SITE_URL="http://localhost:3000"
 
 ---
 
-## 3. Akun Administrator Bawaan
+## 3. Integrasi Login & Daftar dengan Akun Google
+
+Aplikasi menyediakan tombol cepat **"Masuk dengan Google"** dan **"Daftar dengan Google"** di halaman `/login` dan `/register`.
+
+### Mode Cepat / Simulasi (Default)
+Jika variabel `GOOGLE_CLIENT_ID` belum diisi, mengklik tombol Google akan membuka antarmuka pemilihan akun cepat (`/auth/google-demo`). Anda dan tester bisa langsung masuk dengan satu klik untuk mencoba alur belanja dan pemesanan secara instan.
+
+### Menghubungkan Google OAuth Resmi (Production)
+Untuk menggunakan dialog akun Google resmi milik Google:
+1. Buka [Google Cloud Console Credentials](https://console.cloud.google.com/apis/credentials).
+2. Buat Project baru ➔ Buka **APIs & Services** ➔ **Credentials**.
+3. Klik **Create Credentials** ➔ **OAuth client ID** ➔ Application type: **Web application**.
+4. Tambahkan **Authorized redirect URIs**:
+   - Untuk lokal: `http://localhost:3000/api/auth/google/callback`
+   - Untuk production (Vercel): `https://DOMAIN-VERCEL-ANDA.vercel.app/api/auth/google/callback`
+5. Salin **Client ID** dan **Client Secret**, lalu masukkan ke `.env.local` (dan Environment Variables Vercel):
+   ```env
+   GOOGLE_CLIENT_ID="xxxx-xxxx.apps.googleusercontent.com"
+   GOOGLE_CLIENT_SECRET="GOCSPX-xxxx"
+   ```
+
+---
+
+## 4. Akun Administrator Bawaan
 
 Saat inisiasi pertama kali, sistem menyediakan akun admin awal:
 - **Email:** `admin@gmail.com`
 - **Kata Sandi:** `123456`
 
 > ⚠️ **PERINGATAN KEAMANAN WAJIB:**
-> Kredensial di atas bersifat publik untuk mempermudah pengujian awal. Sebelum aplikasi di-deploy ke Vercel atau dipublikasikan ke umum, Anda **wajib mengganti kata sandi admin** melalui menu **Ganti Sandi** yang tersedia di Dashboard Admin (`/dashboard`).
+> Kotak bantu kredensial ini telah dihapus dari tampilan publik halaman login demi keamanan. Sebelum aplikasi dipublikasikan ke publik di Vercel, Anda **wajib mengganti kata sandi admin** melalui menu **Ganti Sandi** yang tersedia di Dashboard Admin (`/dashboard`).
 
 ---
 
-## 4. Catatan Penting Mengenai Penyimpanan Media (Upload Lokal vs Vercel)
+## 5. Catatan Penting Mengenai Penyimpanan Media (Upload Lokal vs Vercel)
 
 - Saat ini thumbnail dan gambar yang diunggah disimpan di folder lokal `public/uploads/` melalui modul `src/lib/storage.ts`, dan hanya path-nya (`/uploads/...`) yang disimpan ke database.
 - Pola ini bekerja sangat baik di lingkungan komputer sendiri (local development).
@@ -83,7 +106,7 @@ Saat inisiasi pertama kali, sistem menyediakan akun admin awal:
 
 ---
 
-## 5. Cara Menjalankan & Memverifikasi
+## 6. Cara Menjalankan & Memverifikasi
 
 1. Jalankan development server:
    ```bash
@@ -98,4 +121,3 @@ Saat inisiasi pertama kali, sistem menyediakan akun admin awal:
    - **Landing Page:** [http://localhost:3000](http://localhost:3000)
    - **Login:** [http://localhost:3000/login](http://localhost:3000/login)
    - **Register:** [http://localhost:3000/register](http://localhost:3000/register)
-   - **Dashboard Admin:** [http://localhost:3000/dashboard](http://localhost:3000/dashboard) *(memerlukan login admin)*
