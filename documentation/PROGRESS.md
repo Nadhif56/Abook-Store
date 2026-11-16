@@ -1,7 +1,7 @@
 # Progres Proyek - Abook Store
 
 Terakhir diperbarui: 16 November 2026  
-Posisi saat ini: **Step 4 - Deploy & Maintenance**
+Posisi saat ini: **Step 4 - Deploy & Integrasi Google OAuth Resmi**
 
 ## Checklist
 - [x] Inisiasi (data usaha & konsep desain terkumpul)
@@ -42,6 +42,7 @@ Posisi saat ini: **Step 4 - Deploy & Maintenance**
 - [ ] STEP 4 - Deploy & maintenance
   - [x] Persiapan Git & `.gitignore` (file rahasia `.env*`, `code.gs`, `setup.gs`, dan `public/uploads/*` terisolasi)
   - [x] Pembuatan log pemeliharaan (`documentation/MAINTENANCE.md`)
+  - [x] Integrasi Resmi Google OAuth 2.0 (Akun Google Asli via Google Cloud Console Client ID & Secret)
   - [ ] Push ke repository GitHub
   - [ ] Impor project di Vercel & isi Environment Variables
   - [ ] Deployment Google Apps Script Web App aktif
@@ -50,6 +51,6 @@ Posisi saat ini: **Step 4 - Deploy & Maintenance**
   - [ ] Dikonfirmasi pengguna
 
 ## Catatan & Keputusan
-- **Aset Gambar Lokal:** Semua foto dan sampul buku telah dialihkan ke file lokal beresolusi tinggi di `public/images/` dengan penamaan terstruktur (`hero-store.svg`, `about-store.svg`, `book-*.svg`, `news-*.svg`) sehingga dijamin selalu muncul tanpa ketergantungan jaringan eksternal.
-- **Sistem Pemesanan Step 3:** Menyediakan sistem tiket pemesanan buku untuk pelanggan toko, pembayaran via scan QRIS resmi, validasi manual oleh admin sebelum paket buku dikirimkan, serta tombol pintas WhatsApp (`wa.me`) untuk komunikasi langsung.
-- **Vercel Deploy Step 4:** Memanfaatkan Git + GitHub untuk auto-deploy ke Vercel. Konfigurasi `APPS_SCRIPT_URL`, `APPS_SCRIPT_SECRET`, dan `AUTH_SECRET` dimasukkan ke Vercel Environment Variables.
+- **Google OAuth 2.0 Asli:** Terhubung langsung ke `accounts.google.com` menggunakan Google Client ID resmi (`516627881470-gt09uk5nubkecqll0m51korbuqv7djdn.apps.googleusercontent.com`).
+- **Aset Gambar Lokal:** Semua foto dan sampul buku telah dialihkan ke file lokal beresolusi tinggi di `public/images/`.
+- **Sistem Pemesanan Step 3:** Tiket pemesanan buku, barcode QRIS Abook Store, dan integrasi WhatsApp.
