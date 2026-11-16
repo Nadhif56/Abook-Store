@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="newsG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1F302B"/>
+      <stop offset="100%" stop-color="#111D1A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="12" fill="url(#newsG)"/>
+
+  <!-- Graphical Elements -->
+  <g transform="translate(620, 250)">
+    
+    <circle cx="0" cy="0" r="130" fill="#52B788" fill-opacity="0.12"/>
+    <!-- Growth Plant sprouting from open pages -->
+    <path d="M 0 60 L 0 -40" stroke="#52B788" stroke-width="4"/>
+    <path d="M 0 0 Q 30 -30 60 -10 Q 40 20 0 10" fill="#52B788"/>
+    <path d="M 0 -20 Q -30 -50 -60 -30 Q -40 0 0 -10" fill="#74C69D"/>
+    <!-- Sun -->
+    <circle cx="50" cy="-60" r="20" fill="#FFEAA7"/>
+  
+  </g>
+
+  <!-- Content Overlay -->
+  <rect x="50" y="60" width="140" height="32" rx="6" fill="#FAF7F2" fill-opacity="0.15"/>
+  <text x="120" y="82" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#52B788" letter-spacing="1.5">
+    RESENSI & WAWASAN
+  </text>
+
+  <text x="60" y="180" font-family="'Merriweather', serif" font-size="30" font-weight="bold" fill="#FAF7F2" width="500">
+    5 Buku Pengembangan Diri
+  </text>
+  <text x="60" y="225" font-family="'Merriweather', serif" font-size="30" font-weight="bold" fill="#FAF7F2" width="500">
+    Pilihan Kurator Abook Store
+  </text>
+
+  <text x="60" y="280" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" fill="#DED6C1" width="500">
+    Membangun kebiasaan produktif, fokus, dan kestabilan
+  </text>
+  <text x="60" y="305" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" fill="#DED6C1" width="500">
+    mental yang terbukti aplikatif sehari-hari.
+  </text>
+
+  <line x1="60" y1="360" x2="550" y2="360" stroke="#FAF7F2" stroke-opacity="0.2" stroke-width="1"/>
+
+  <text x="60" y="410" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#52B788">
+    Oleh Kurator Buku • 04 November 2026
+  </text>
+</svg>

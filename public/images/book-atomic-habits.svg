@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FAF7F2"/>
+      <stop offset="100%" stop-color="#F0ECE1"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Book Base with Spine & Border -->
+  <rect width="600" height="800" rx="16" fill="url(#bgG)"/>
+
+  <!-- Realistic Book Spine 3D Shadow on Left -->
+  <rect x="0" y="0" width="36" height="800" rx="4" fill="#000000" fill-opacity="0.25"/>
+  <line x1="36" y1="0" x2="36" y2="800" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="2"/>
+
+  <!-- Outer Frame -->
+  <rect x="55" y="45" width="490" height="710" rx="8" fill="none" stroke="#D9531E" stroke-width="2" stroke-opacity="0.5"/>
+  <rect x="65" y="55" width="470" height="690" rx="4" fill="none" stroke="#D9531E" stroke-width="1" stroke-opacity="0.25"/>
+
+  <!-- Category Tag -->
+  <rect x="75" y="80" width="140" height="30" rx="6" fill="#D9531E" fill-opacity="0.2"/>
+  <text x="145" y="100" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#D9531E" letter-spacing="2">
+    PENGEMBANGAN DIRI
+  </text>
+
+  <!-- Central Graphic Illustration -->
+  <g transform="translate(300, 340)">
+    
+    <!-- Tiny Particles Forming Greater Ring -->
+    <circle cx="0" cy="0" r="95" fill="none" stroke="#D9531E" stroke-width="3"/>
+    <circle cx="0" cy="0" r="70" fill="#D9531E" fill-opacity="0.12"/>
+    <!-- Atomic Nucleus & Orbiting Nodes -->
+    <circle cx="0" cy="0" r="22" fill="#D9531E"/>
+    <!-- Orbit 1 -->
+    <ellipse cx="0" cy="0" rx="80" ry="32" fill="none" stroke="#15100C" stroke-width="2" transform="rotate(30)"/>
+    <circle cx="65" cy="20" r="7" fill="#15100C"/>
+    <!-- Orbit 2 -->
+    <ellipse cx="0" cy="0" rx="80" ry="32" fill="none" stroke="#15100C" stroke-width="2" transform="rotate(-30)"/>
+    <circle cx="-65" cy="20" r="7" fill="#D9531E"/>
+    <!-- Orbit 3 -->
+    <ellipse cx="0" cy="0" rx="80" ry="32" fill="none" stroke="#15100C" stroke-width="2" transform="rotate(90)"/>
+    <circle cx="0" cy="-60" r="7" fill="#15100C"/>
+  
+  </g>
+
+  <!-- Book Title -->
+  <text x="300" y="540" text-anchor="middle" font-family="'Merriweather', serif" font-size="32" font-weight="bold" fill="#15100C" letter-spacing="-0.5">
+    ATOMIC
+  </text>
+  <text x="300" y="585" text-anchor="middle" font-family="'Merriweather', serif" font-size="32" font-weight="bold" fill="#15100C">
+    HABITS
+  </text>
+
+  <!-- Subtitle or Tagline -->
+  <text x="300" y="630" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="500" fill="#5C5449" fill-opacity="0.8" letter-spacing="0.5">
+    Perubahan Kecil yang Memberikan Hasil Luar Biasa
+  </text>
+
+  <!-- Author Name -->
+  <line x1="220" y1="670" x2="380" y2="670" stroke="#D9531E" stroke-width="2" stroke-opacity="0.6"/>
+  <text x="300" y="705" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#D9531E" letter-spacing="1.5">
+    JAMES CLEAR
+  </text>
+
+  <!-- Logo Badge at Bottom -->
+  <text x="300" y="735" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" fill="#5C5449" fill-opacity="0.5" letter-spacing="2">
+    EDISI RESMI • ABOOK STORE
+  </text>
+</svg>

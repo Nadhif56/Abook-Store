@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="newsG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3D2B3D"/>
+      <stop offset="100%" stop-color="#201620"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="12" fill="url(#newsG)"/>
+
+  <!-- Graphical Elements -->
+  <g transform="translate(620, 250)">
+    
+    <circle cx="0" cy="0" r="130" fill="#F39A9D" fill-opacity="0.12"/>
+    <!-- Cute Hot Air Balloon -->
+    <ellipse cx="0" cy="-30" rx="45" ry="55" fill="#F39A9D"/>
+    <path d="M -45 -30 Q 0 40 45 -30" fill="#FFCCD5"/>
+    <rect x="-15" y="45" width="30" height="20" rx="3" fill="#D4A373"/>
+    <line x1="-10" y1="20" x2="-10" y2="45" stroke="#FAF7F2" stroke-width="2"/>
+    <line x1="10" y1="20" x2="10" y2="45" stroke="#FAF7F2" stroke-width="2"/>
+    <!-- Little Stars -->
+    <circle cx="-60" cy="-70" r="4" fill="#FFEAA7"/>
+    <circle cx="70" cy="-40" r="5" fill="#FFEAA7"/>
+    <circle cx="-50" cy="20" r="3" fill="#FFEAA7"/>
+  
+  </g>
+
+  <!-- Content Overlay -->
+  <rect x="50" y="60" width="140" height="32" rx="6" fill="#FAF7F2" fill-opacity="0.15"/>
+  <text x="120" y="82" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#F39A9D" letter-spacing="1.5">
+    EDUKASI LITERASI
+  </text>
+
+  <text x="60" y="180" font-family="'Merriweather', serif" font-size="30" font-weight="bold" fill="#FAF7F2" width="500">
+    Tips Memilih Buku Cerita Bergambar
+  </text>
+  <text x="60" y="225" font-family="'Merriweather', serif" font-size="30" font-weight="bold" fill="#FAF7F2" width="500">
+    Untuk Menumbuhkan Minat Anak
+  </text>
+
+  <text x="60" y="280" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" fill="#DED6C1" width="500">
+    Pendekatan visual hangat dan narasi interaktif agar
+  </text>
+  <text x="60" y="305" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" fill="#DED6C1" width="500">
+    si kecil gemar membaca sejak usia dini.
+  </text>
+
+  <line x1="60" y1="360" x2="550" y2="360" stroke="#FAF7F2" stroke-opacity="0.2" stroke-width="1"/>
+
+  <text x="60" y="410" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#F39A9D">
+    Oleh Tim Edukasi • 28 Oktober 2026
+  </text>
+</svg>

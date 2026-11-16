@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-container": "#958b85", "tertiary": "#181008", "on-primary": "#ffffff", "paper-subtle": "#EFE9DB", "on-error": "#ffffff", "surface-container": "#f6edd7", "on-tertiary-container": "#998b7f", "on-secondary": "#ffffff", "paper-border": "#DED6C1", "primary-fixed-dim": "#d0c4bd", "on-secondary-container": "#6d6056", "surface": "#fff9ef", "secondary-fixed-dim": "#d4c3b7", "inverse-surface": "#353021", "on-tertiary-fixed": "#221a12", "on-tertiary-fixed-variant": "#4f453b", "tertiary-fixed": "#f0e0d1", "on-surface": "#1f1b0e", "tertiary-fixed-dim": "#d3c4b6", "tertiary-container": "#2e251c", "surface-container-low": "#fcf3dc", "inverse-on-surface": "#f9f0da", "background": "#fff9ef", "on-primary-fixed-variant": "#4d4540", "olive-umber": "#3D352E", "secondary-fixed": "#f1dfd2", "secondary": "#695c52", "primary-container": "#2b2520", "paper-sand": "#B7B09E", "outline": "#7e756f", "surface-dim": "#e2d9c4", "error-container": "#ffdad6", "primary": "#15100c", "on-secondary-fixed-variant": "#50453b", "on-surface-variant": "#4d4540", "paper-canvas": "#FBF9F5", "outline-variant": "#d0c4bd", "surface-container-highest": "#ebe2cc", "espresso-deep": "#261F1A", "inverse-primary": "#d0c4bd", "on-error-container": "#93000a", "surface-bright": "#fff9ef", "surface-tint": "#655d57", "error": "#ba1a1a", "primary-fixed": "#ece0d8", "secondary-container": "#eedccf", "surface-container-high": "#f1e8d1", "on-secondary-fixed": "#231a12", "ivory-bright": "#FAF7F2", "surface-variant": "#ebe2cc", "on-background": "#1f1b0e", "paper-muted": "#CFC6B1", "on-tertiary": "#ffffff", "on-primary-fixed": "#201b16", "surface-container-lowest": "#ffffff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter-mobile": "1rem", "margin-mobile": "1.25rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-md": "1rem", "space-sm": "0.5rem", "margin": "3rem" }, fontFamily: { "label-sm": ["Plus Jakarta Sans"], "headline-md": ["Merriweather"], "body-lg": ["Merriweather"], "display-hero-mobile": ["Merriweather"], "body-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-lg": ["Merriweather"], "display-hero": ["Merriweather"], "headline-sm": ["Merriweather"], "title-sm": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Merriweather"] }, fontSize: { "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "300" }], "display-hero-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg": ["36px", { "lineHeight": "46px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "display-hero": ["48px", { "lineHeight": "58px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "title-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "400" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md flex flex-col min-h-screen selection:bg-secondary-container selection:text-espresso-deep"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,37,32,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="Logo Aksara Toko Buku &amp; Ruang Baca" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDBtCwfghqM9FQQeYZLDyjPFfx0C3_dSV9tYA7ne_YaovdZj_A5Na01nRQS6ENxCJ6qYH2XvP6S1n7r2GHd0ggpennjNW82qFpY9eYydBfCHkSyTi210dXfaIE3z0-cI8zkqpwaDACR--MQAbsqfTV9UKQjYLoWXfa2DtnG69vmEv7MnCcCvCgigxLLFaH2IMDhpnwhYRWfi-f_cmAvgAkKz3KmNw1fVG_ELlpTwEqu"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-espresso-deep leading-none">Aksara</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal tracking-wider uppercase leading-tight">Toko Buku &amp; Ruang Baca</span></div></div><div class="flex items-center gap-space-sm"><button class="min-h-[44px] px-space-sm py-space-xs font-label-md text-label-md text-espresso-deep hover:text-secondary transition-colors" type="button">Masuk</button><div class="min-w-[44px] min-h-[44px] flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSm3LsLh3FN4xqNin83l2jJofWGAfv2wl0hS7wXv4kBdkC50OJpumS_gvFyKaGS8zJQq09tA71hPP3FwYeVW96a_8LQTXL9_lVcJGkeakDGQZhCbjVZt4ucuBdjnDMS_JFpdFdpkvvcsTQfCVLp4LnK98zmNHmaLZBnJJs3hXsheqS8D6NHUtAQKAfmzV5F85mz_ojMj-g3m8X9dNo7Zih4w0p7xZ-25AQeJgvYvL8"/></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full text-on-surface">
+<!-- HERO SECTION -->
+<section class="flex flex-col px-margin-mobile pt-space-md pb-space-xl">
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-1 rounded-full bg-paper-subtle text-secondary mb-space-sm">
+<span class="material-symbols-outlined text-[16px]">auto_stories</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Toko Buku &amp; Ruang Baca Komunitas</span>
+</div>
+<h1 class="font-display-hero-mobile text-display-hero-mobile text-espresso-deep mb-space-sm">
+      Temukan Ketenangan, Rawat Rasa Ingin Tahu
+    </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg leading-relaxed">
+      Koleksi ribuan literatur pilihan dan ruang baca hening untuk penikmat buku, pemikir, serta kreator di jantung kota.
+    </p>
+<!-- CTAs -->
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<a class="w-full min-h-[48px] px-space-lg py-space-sm bg-espresso-deep hover:bg-olive-umber text-ivory-bright font-label-md text-label-md rounded flex items-center justify-center gap-space-xs transition-colors shadow-sm" href="#layanan">
+<span>Jelajahi Koleksi</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="w-full min-h-[48px] px-space-lg py-space-sm bg-surface-container hover:bg-surface-container-high text-espresso-deep font-label-md text-label-md rounded flex items-center justify-center gap-space-xs transition-colors" href="#kontak">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Reservasi Meja</span>
+</a>
+</div>
+<!-- 2x2 Key Metrics -->
+<div class="grid grid-cols-2 gap-space-xs mb-space-lg">
+<div class="p-space-md bg-surface-container rounded flex flex-col justify-center">
+<span class="font-headline-sm text-headline-sm text-espresso-deep leading-none mb-1">12.000+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Judul Terpilih</span>
+</div>
+<div class="p-space-md bg-surface-container rounded flex flex-col justify-center">
+<span class="font-headline-sm text-headline-sm text-espresso-deep leading-none mb-1">450+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Anggota Aktif</span>
+</div>
+<div class="p-space-md bg-surface-container rounded flex flex-col justify-center">
+<span class="font-headline-sm text-headline-sm text-espresso-deep leading-none mb-1">4 Ruang</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bilik Akustik</span>
+</div>
+<div class="p-space-md bg-surface-container rounded flex flex-col justify-center">
+<span class="font-headline-sm text-headline-sm text-espresso-deep leading-none mb-1">Sel – Min</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">09:00 - 21:00</span>
+</div>
+</div>
+<!-- Hero Card Image -->
+<div class="w-full rounded overflow-hidden shadow-sm bg-surface-container">
+<div class="relative w-full aspect-[4/3]">
+<img class="w-full h-full object-cover" data-alt="Warm, atmospheric interior of Aksara independent bookstore with floor-to-ceiling dark teak wooden bookshelves filled with curated books, soft incandescent pendant lamps, cozy upholstered linen reading armchairs, patterned vintage Persian rug, warm cream parchment tone lighting, inviting peaceful ambience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgJkmEYaGF-zznZJc40i32IJyk4YbU9jrl55aolC3tPZKDpfAaJMebgKNjmEH0shPGGd539vkFwUAptv98mqDBVvH75Zvo50_kUzIumo5I_OzT_JuguBkK9bCPxVfVefm0G-9beGTMokuULJcIxarENdp5M2xwcjXxO6XE8EtsJKAwGXQJHp2m7tunAAswJnRncfl4243p-zeyEwAJsibV8kqAUCN4Lo-rtdpgp8cA"/>
+<div class="absolute bottom-0 inset-x-0 p-space-md bg-gradient-to-t from-espresso-deep/90 via-espresso-deep/50 to-transparent text-ivory-bright">
+<p class="font-headline-sm text-headline-sm italic">"Buku adalah percakapan melintasi masa."</p>
+<span class="font-label-sm text-label-sm opacity-80">— Pojok Baca Teakwood, Aksara</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT SECTION (#tentang) -->
+<section class="flex flex-col px-margin-mobile py-space-xl bg-surface-container-low" id="tentang">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="w-4 h-[2px] bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Tentang Aksara</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-espresso-deep mb-space-md">
+      Suaka Literasi di Tengah Hiruk Pikuk Kota
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+      Aksara lahir dari kerinduan akan ruang singgah yang sunyi. Di tengah percepatan ritme metropolitan, kami mendedikasikan diri sebagai rumah bagi karya sastra bermutu, naskah arsip, perbincangan gagasan, dan aroma seduhan kopi hangat.
+    </p>
+<!-- Curator Excerpt & Photo -->
+<div class="bg-surface-container rounded p-space-md mb-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-md">
+<img class="w-16 h-16 rounded object-cover flex-shrink-0" data-alt="Portrait of an Indonesian woman literature curator wearing linen clothes, gentle warm expression, natural library window light, holding an aged hardbound novel in a cozy bookstore aisle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2t2kwepjlmXcLNfHLbTzzlLRB630UiLJGHu92HSiRatMv38lJ7KI-07r6-j3TIrnBeafXy6ERns84KypS8j-N1zubM-N1MKTRPLY5ozIh5TSG8ib3P12TS7DGFlZqWMMhHq-BrkH5IDYwcsGvt_gS5kpeWQBIIRGaxheQ-qb6XuC64GZ9J_P5tzqc07GjAPdpv3VxyKzpu55AK4YIgu-SpWPAeFwZ5WXO4SMoI6UR"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-espresso-deep">Dewi Sekar Larasati</span>
+<span class="font-label-sm text-label-sm text-secondary">Kepala Kurator &amp; Pegiat Aksara</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">"Setiap buku di rak kami dipilih dengan sengaja, bukan sekadar pelengkap visual."</span>
+</div>
+</div>
+</div>
+<!-- 3 Key Strengths -->
+<div class="flex flex-col gap-space-sm">
+<div class="bg-paper-canvas p-space-md rounded flex items-start gap-space-md">
+<div class="w-10 h-10 rounded bg-paper-subtle flex items-center justify-center flex-shrink-0 text-espresso-deep">
+<span class="material-symbols-outlined text-[20px]">bookmarks</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-espresso-deep mb-1">Kurasi Judul Langka &amp; Independen</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Menyediakan penerbit independen nusantara, naskah sastra terjemahan kritis, katalog seni, hingga cetakan pertama yang sulit ditemukan.
+          </p>
+</div>
+</div>
+<div class="bg-paper-canvas p-space-md rounded flex items-start gap-space-md">
+<div class="w-10 h-10 rounded bg-paper-subtle flex items-center justify-center flex-shrink-0 text-espresso-deep">
+<span class="material-symbols-outlined text-[20px]">volume_off</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-espresso-deep mb-1">Ruang Baca Akustik Hening</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Dilengkapi peredam suara alami, kursi ergonomis berlapis linen, soket daya tersembunyi, dan pencahayaan hangat untuk fokus penuh.
+          </p>
+</div>
+</div>
+<div class="bg-paper-canvas p-space-md rounded flex items-start gap-space-md">
+<div class="w-10 h-10 rounded bg-paper-subtle flex items-center justify-center flex-shrink-0 text-espresso-deep">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-sm text-title-sm text-espresso-deep mb-1">Komunitas &amp; Diskusi Akhir Pekan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Ruang temu mingguan bersama penulis, bedah esai berkala, pelatihan menulis kreatif, dan lokakarya jilid buku tradisional.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICES SECTION (#layanan) -->
+<section class="flex flex-col px-margin-mobile py-space-xl" id="layanan">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="w-4 h-[2px] bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Layanan Kami</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-espresso-deep mb-space-xs">
+      Layanan Perpustakaan &amp; Toko Buku
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+      Dirancang untuk memudahkan penjelajahan literatur, riset mandiri, hingga pengayaan koleksi pribadi Anda.
+    </p>
+<!-- 6 Mobile Service Cards -->
+<div class="flex flex-col gap-space-sm">
+<!-- 1 -->
+<div class="p-space-md bg-surface-container rounded flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded bg-secondary-container flex items-center justify-center text-espresso-deep">
+<span class="material-symbols-outlined text-[22px]">import_contacts</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface text-secondary">Sirkulasi</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-espresso-deep mt-1">Peminjaman Buku Sirkulasi</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Akses meminjam hingga 4 buku per bulan untuk anggota terdaftar dengan sistem pengingat ramah via pesan digital.
+        </p>
+</div>
+<!-- 2 -->
+<div class="p-space-md bg-surface-container rounded flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded bg-secondary-container flex items-center justify-center text-espresso-deep">
+<span class="material-symbols-outlined text-[22px]">desk</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface text-secondary">Reservasi</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-espresso-deep mt-1">Reservasi Meja &amp; Bilik Senyap</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Amankan meja riset pribadi atau bilik senyap berkapasitas 1-2 orang untuk membaca intensif tanpa interupsi.
+        </p>
+</div>
+<!-- 3 -->
+<div class="p-space-md bg-surface-container rounded flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded bg-secondary-container flex items-center justify-center text-espresso-deep">
+<span class="material-symbols-outlined text-[22px]">shelves</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface text-secondary">Konsultasi</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-espresso-deep mt-1">Kurasi Perpustakaan Pribadi &amp; Kantor</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Konsultasi pemilihan koleksi buku khusus untuk rumah tinggal, galeri, studio arsitektur, maupun ruang kerja kolaboratif.
+        </p>
+</div>
+<!-- 4 -->
+<div class="p-space-md bg-surface-container rounded flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded bg-secondary-container flex items-center justify-center text-espresso-deep">
+<span class="material-symbols-outlined text-[22px]">forum</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface text-secondary">Komunitas</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-espresso-deep mt-1">Klub Buku &amp; Temu Sastrawan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Pertemuan dwi-mingguan untuk membedah karya fiksi dan non-fiksi terpilih bersama penulis tamu dan kurator tamu.
+        </p>
+</div>
+<!-- 5 -->
+<div class="p-space-md bg-surface-container rounded flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded bg-secondary-container flex items-center justify-center text-espresso-deep">
+<span class="material-symbols-outlined text-[22px]">menu_book</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface text-secondary">Publikasi</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-espresso-deep mt-1">Konsinyasi Zine &amp; Penerbit Indie</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Ruang etalase terbuka bagi pembuat zine, terbitan swadaya, karya fotografi mandiri, dan rilisan sastra berskala mikro.
+        </p>
+</div>
+<!-- 6 -->
+<div class="p-space-md bg-surface-container rounded flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded bg-secondary-container flex items-center justify-center text-espresso-deep">
+<span class="material-symbols-outlined text-[22px]">local_cafe</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface text-secondary">Kedai</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-espresso-deep mt-1">Kafe Seduh Manual &amp; Aneka Teh Tisane</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Kopi filter biji nusantara sangrai ringan, teh herbal racikan lokal, serta roti gandum artisanal peneman membaca.
+        </p>
+</div>
+</div>
+</section>
+<!-- NEWS / POSTS SECTION (#kabar) -->
+<section class="flex flex-col px-margin-mobile py-space-xl bg-surface-container-low" id="kabar">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="w-4 h-[2px] bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Kabar &amp; Resensi</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-espresso-deep mb-space-md">
+      Warta Buku &amp; Catatan Pinggir
+    </h2>
+<!-- 3 Stacked Articles -->
+<div class="flex flex-col gap-space-md mb-space-lg">
+<!-- Article 1 -->
+<article class="bg-paper-canvas rounded overflow-hidden shadow-sm flex flex-col">
+<div class="w-full aspect-[16/9] relative">
+<img class="w-full h-full object-cover" data-alt="Editorial close-up of an open classic Indonesian literature book on a wooden writing desk, cup of hot artisanal pour-over coffee emitting gentle steam, warm golden afternoon sunlight, shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChhLOprgQoena_DqbRi-nkgMSGTlWhfNw6A2HfCjiWHxDzmft-HGyXginyZ2QxW4wO9KnFtmJUOa5OIUsEICu_yw4cYRTfTq4oVaI6ngfflxYG0K_q9axrNWiB8oLI3TUzd4xIbFUMD1dKn9onpzJjh_1cIj-vMSohjDHtNKPUjJnPIZaXHzz8DYVxD8yEGv24sDQUT7qCp3wVWo-u-_y0yErs5cJflCkSBFjY9HOw"/>
+<span class="absolute top-space-sm left-space-sm bg-espresso-deep text-ivory-bright font-label-sm text-label-sm px-space-xs py-1 rounded">Resensi Esai</span>
+</div>
+<div class="p-space-md flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary mb-1">12 Mei 2025 • Kurasi Aksara</span>
+<h3 class="font-headline-sm text-headline-sm text-espresso-deep mb-space-xs leading-snug">
+            Membaca Ulang Jejak Sastra Kota dalam Realisme Magis
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+            Eksplorasi kumpulan cerita pendek kontemporer yang merekam kegelisahan urban dengan kepekaan bahasa yang mengakar.
+          </p>
+<a class="font-label-md text-label-md text-espresso-deep inline-flex items-center gap-1 self-start hover:text-secondary transition-colors underline underline-offset-4" href="#kabar">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="bg-paper-canvas rounded overflow-hidden shadow-sm flex flex-col">
+<div class="w-full aspect-[16/9] relative">
+<img class="w-full h-full object-cover" data-alt="A cozy literary salon event at dusk in an intimate bookstore room with warm amber lighting, attendees listening attentively to an author reading from manuscript, surrounded by rich book-lined shelves." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF1KJ62kEKxW0aN7moya5xQbkeaZ8ci4BqgeIMgXbcnbFNwE0VS1ZkGbZvq2xMa2uSJE4XB8W4bRacemy4ao821QAKUbU4cvimwpfIHSS0N3hhzFFLMc1ao29l2O1HmFfZWjTEBfjahXa2wJjzKCpINTEf2MLqYnTotNF8raje4e6Yfk92i7yQiZDiWC9kGwXM_hrFtT3Z21QmIYx9K_CwqRHy9TpYhFaloyE5tkmt"/>
+<span class="absolute top-space-sm left-space-sm bg-espresso-deep text-ivory-bright font-label-sm text-label-sm px-space-xs py-1 rounded">Agenda Salon</span>
+</div>
+<div class="p-space-md flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary mb-1">04 Mei 2025 • Acara Komunitas</span>
+<h3 class="font-headline-sm text-headline-sm text-espresso-deep mb-space-xs leading-snug">
+            Temu Penulis: Menenun Puisi di Zaman Derau Algoritma
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+            Diskusi hangat bersama tiga penyair muda mengenai daya tahan aksara puitik di tengah banjir arus informasi kilat.
+          </p>
+<a class="font-label-md text-label-md text-espresso-deep inline-flex items-center gap-1 self-start hover:text-secondary transition-colors underline underline-offset-4" href="#kabar">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</article>
+<!-- Article 3 -->
+<article class="bg-paper-canvas rounded overflow-hidden shadow-sm flex flex-col">
+<div class="w-full aspect-[16/9] relative">
+<img class="w-full h-full object-cover" data-alt="Book restoration craftsmanship station showing fine paper binding tools, linen threads, natural bone folder, textured parchment papers arranged neatly on old oak work table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq3MUoPVWVxLsqsXEuSpRmDW5r-e591HVVz5eP_nU36bsEYSSTFapch0A8SAY_0XlW_3iy1M0zGUIoX1atbyU7fCFEgez7jDTsuzb6c1TZiYGRs3erVZLvE0MT1xwchBIxgELGGun0Pa1eI_-Gy5h-5LYP_dENLJ1bBu8TW6ZcI80R09C1FqJ_9mnKjcdHOQK1t13Db8tLD5yMlPCFXEjUJa0k43BVP6DAWpVlMRrP"/>
+<span class="absolute top-space-sm left-space-sm bg-espresso-deep text-ivory-bright font-label-sm text-label-sm px-space-xs py-1 rounded">Lokakarya</span>
+</div>
+<div class="p-space-md flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary mb-1">28 April 2025 • Arsip &amp; Kriya</span>
+<h3 class="font-headline-sm text-headline-sm text-espresso-deep mb-space-xs leading-snug">
+            Seni Merawat Kertas: Pengantar Menjilid Tradisional
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+            Panduan dasar bagi siapa saja yang ingin melestarikan naskah lawas dan merakit jurnal pribadi berpunggung benang linen.
+          </p>
+<a class="font-label-md text-label-md text-espresso-deep inline-flex items-center gap-1 self-start hover:text-secondary transition-colors underline underline-offset-4" href="#kabar">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</article>
+</div>
+<button class="w-full min-h-[44px] px-space-lg py-space-sm bg-surface-container hover:bg-surface-container-high text-espresso-deep font-label-md text-label-md rounded flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span>Lihat Semua Kabar &amp; Catatan</span>
+<span class="material-symbols-outlined text-[18px]">library_books</span>
+</button>
+</section>
+<!-- CONTACT & RESERVATION SECTION (#kontak) -->
+<section class="flex flex-col px-margin-mobile py-space-xl" id="kontak">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="w-4 h-[2px] bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Kontak &amp; Lokasi</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-espresso-deep mb-space-md">
+      Kunjungi Kami atau Sampaikan Pesan
+    </h2>
+<!-- Contact Info Card -->
+<div class="bg-surface-container rounded p-space-md mb-space-lg flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-espresso-deep">Alamat Ruang Baca</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Jl. Senopati No. 42, Kebayoran Baru, Jakarta Selatan, 12190
+          </p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5">call</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-espresso-deep">WhatsApp &amp; Telepon</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            +62 812-9842-1925 / (021) 720-3341
+          </p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5">mail</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-espresso-deep">Surat Elektronik</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            salam@aksarabuku.id
+          </p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5">schedule</span>
+<div class="flex flex-col">
+<span class="font-title-sm text-title-sm text-espresso-deep">Jam Operasional</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Selasa – Minggu: 09:00 – 21:00 WIB<br/>
+<span class="text-secondary italic">Senin tutup untuk pemeliharaan katalog &amp; arsip</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Fast Inquiry Form -->
+<div class="bg-paper-canvas p-space-md rounded shadow-sm mb-space-lg flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-espresso-deep mb-space-xs">Kirim Pesan atau Pertanyaan</h3>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-espresso-deep" for="name">Nama Lengkap</label>
+<input class="w-full min-h-[44px] px-space-md py-space-xs bg-ivory-bright rounded text-espresso-deep font-body-sm text-body-sm placeholder:text-paper-sand focus:outline-none focus:bg-surface-container transition-colors" id="name" placeholder="Tuliskan nama Anda" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-espresso-deep" for="email">Alamat Email</label>
+<input class="w-full min-h-[44px] px-space-md py-space-xs bg-ivory-bright rounded text-espresso-deep font-body-sm text-body-sm placeholder:text-paper-sand focus:outline-none focus:bg-surface-container transition-colors" id="email" placeholder="nama@email.com" type="email"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-espresso-deep" for="purpose">Keperluan</label>
+<div class="relative">
+<select class="w-full min-h-[44px] px-space-md py-space-xs bg-ivory-bright rounded text-espresso-deep font-body-sm text-body-sm focus:outline-none focus:bg-surface-container transition-colors appearance-none pr-8" id="purpose">
+<option value="reservasi">Reservasi Bilik Senyap / Meja</option>
+<option value="keanggotaan">Pendaftaran Keanggotaan Pustaka</option>
+<option value="kurasi">Konsultasi Kurasi Buku Pribadi</option>
+<option value="kerjasama">Kerjasama Penerbit Indie / Zine</option>
+<option value="lainnya">Pertanyaan Umum Lainnya</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-secondary text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-espresso-deep" for="message">Isi Pesan</label>
+<textarea class="w-full p-space-md bg-ivory-bright rounded text-espresso-deep font-body-sm text-body-sm placeholder:text-paper-sand focus:outline-none focus:bg-surface-container transition-colors resize-none" id="message" placeholder="Tuliskan catatan, tanggal rencana kedatangan, atau pertanyaan Anda..." rows="3"></textarea>
+</div>
+<button class="mt-space-xs w-full min-h-[48px] px-space-lg py-space-sm bg-espresso-deep hover:bg-olive-umber text-ivory-bright font-label-md text-label-md rounded flex items-center justify-center gap-space-xs transition-colors shadow-sm" id="btn-kirim" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Kirim Pesan Sekarang</span>
+</button>
+<div class="hidden p-space-sm bg-surface-container rounded text-center" id="form-success">
+<span class="font-label-sm text-label-sm text-espresso-deep">Terima kasih. Pesan Anda telah kami terima dengan baik.</span>
+</div>
+</div>
+<!-- Google Maps Card Preview -->
+<div class="w-full rounded overflow-hidden shadow-sm bg-surface-container flex flex-col">
+<div class="w-full h-48 bg-cover bg-center relative" data-location="Jl. Senopati No. 42 Jakarta Selatan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVYjNpogRR1fOwjQppKyOmbVBmi5sNzr-ZQebRQpEZ1kU-DE5YQAhjdaerOMKFl0O8GL2tS0Q2TK8MHTlqzHtc0PxlHlW0unSnmbgQurVwz6GYQ__Hp9wXhrBV-fU6RsLKdVXUkQ_1giyEbtRY1_dUvnZgFSeUYMpHUWIjuzwlE_OCPU_UugwLwBE7ueptUX1ti7ufqA0jkoTlogk-j551EYfl_O-WZ1WS_-bMXCY5')">
+<div class="absolute inset-0 bg-espresso-deep/15 flex items-center justify-center">
+<div class="px-space-md py-space-xs bg-espresso-deep text-ivory-bright rounded-full flex items-center gap-space-xs shadow-md">
+<span class="material-symbols-outlined text-[18px] text-error">pin_drop</span>
+<span class="font-label-sm text-label-sm">Aksara Senopati 42</span>
+</div>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs bg-surface-container">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-espresso-deep">Peta Lokasi &amp; Petunjuk Arah</span>
+<span class="font-label-sm text-label-sm text-secondary">Parkir Sepeda &amp; Mobil</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">5 menit berjalan kaki dari Halte TransJakarta Senopati.</p>
+<a class="mt-space-xs min-h-[44px] w-full bg-surface hover:bg-surface-container-high text-espresso-deep font-label-md text-label-md rounded flex items-center justify-center gap-space-xs transition-colors" href="https://maps.google.com/?q=Jl.+Senopati+No.+42+Jakarta+Selatan" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+<span>Buka di Google Maps</span>
+</a>
+</div>
+</div>
+</section>
+<!-- FOOTER SUMMARY -->
+<footer class="flex flex-col px-margin-mobile pt-space-xl pb-space-lg bg-espresso-deep text-paper-sand">
+<div class="flex flex-col mb-space-lg">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="font-headline-sm text-headline-sm text-ivory-bright">Aksara</span>
+<span class="font-label-sm text-label-sm text-paper-muted uppercase tracking-wider">Toko Buku &amp; Ruang Baca</span>
+</div>
+<p class="font-body-sm text-body-sm text-paper-sand leading-relaxed">
+        Menghidupkan percakapan bermakna, mendampingi pembaca setia, dan merawat jejak aksara untuk generasi mendatang.
+      </p>
+</div>
+<!-- Social Links & Navigation -->
+<div class="grid grid-cols-2 gap-space-md mb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-ivory-bright uppercase tracking-wider mb-1">Tautan Cepat</span>
+<a class="font-body-sm text-body-sm text-paper-sand hover:text-ivory-bright transition-colors" href="#tentang">Tentang Kami</a>
+<a class="font-body-sm text-body-sm text-paper-sand hover:text-ivory-bright transition-colors" href="#layanan">Katalog &amp; Layanan</a>
+<a class="font-body-sm text-body-sm text-paper-sand hover:text-ivory-bright transition-colors" href="#kabar">Resensi &amp; Warta</a>
+<a class="font-body-sm text-body-sm text-paper-sand hover:text-ivory-bright transition-colors" href="#kontak">Reservasi Meja</a>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-ivory-bright uppercase tracking-wider mb-1">Kanal Komunitas</span>
+<a class="font-body-sm text-body-sm text-paper-sand hover:text-ivory-bright transition-colors" href="#">Instagram @aksarabuku</a>
+<a class="font-body-sm text-body-sm text-paper-sand hover:text-ivory-bright transition-colors" href="#">Klub Baca Spotify</a>
+<a class="font-body-sm text-body-sm text-paper-sand hover:text-ivory-bright transition-colors" href="#">Substack Surat Aksara</a>
+<a class="font-body-sm text-body-sm text-paper-sand hover:text-ivory-bright transition-colors" href="#">Koleksi Zine Digital</a>
+</div>
+</div>
+<div class="pt-space-md border-t border-secondary/40 flex flex-col gap-1 items-center text-center">
+<p class="font-label-sm text-label-sm text-paper-muted">
+        Hak Cipta © 2025 Aksara Toko Buku &amp; Ruang Baca. Seluruh hak cipta dilindungi.
+      </p>
+<p class="font-label-sm text-label-sm text-paper-muted/80">
+        Ditenun dengan cinta aksara di Kebayoran Baru, Jakarta Selatan.
+      </p>
+</div>
+</footer>
+</div>
+<script>
+  (function() {
+    const btn = document.getElementById('btn-kirim');
+    const msg = document.getElementById('form-success');
+    if (btn && msg) {
+      btn.addEventListener('click', function() {
+        btn.classList.add('opacity-50', 'pointer-events-none');
+        btn.textContent = 'Mengirim Pesan...';
+        setTimeout(function() {
+          btn.classList.add('hidden');
+          msg.classList.remove('hidden');
+        }, 600);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(43,37,32,0.05)]" data-active-classes="text-espresso-deep font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center flex-1 h-full min-h-[44px] transition-colors text-espresso-deep font-bold" data-path="beranda" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm mt-space-xs">Beranda</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-h-[44px] text-on-surface-variant hover:text-espresso-deep transition-colors" data-path="tentang" href="#"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm mt-space-xs">Tentang</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-h-[44px] text-on-surface-variant hover:text-espresso-deep transition-colors" data-path="layanan" href="#"><span class="material-symbols-outlined text-[22px]">local_library</span><span class="font-label-sm text-label-sm mt-space-xs">Layanan</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-h-[44px] text-on-surface-variant hover:text-espresso-deep transition-colors" data-path="kabar" href="#"><span class="material-symbols-outlined text-[22px]">newspaper</span><span class="font-label-sm text-label-sm mt-space-xs">Kabar</span></a><a class="flex flex-col items-center justify-center flex-1 h-full min-h-[44px] text-on-surface-variant hover:text-espresso-deep transition-colors" data-path="kontak" href="#"><span class="material-symbols-outlined text-[22px]">location_on</span><span class="font-label-sm text-label-sm mt-space-xs">Kontak</span></a></div></nav></body></html>

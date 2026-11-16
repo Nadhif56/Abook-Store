@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 680" width="500" height="680">
+  <defs>
+    <linearGradient id="qrisHeader" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ED1C24"/>
+      <stop offset="100%" stop-color="#BF0F15"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="500" height="680" rx="20" fill="#FFFFFF" stroke="#DED6C1" stroke-width="2"/>
+
+  <!-- Top QRIS Red Header Banner -->
+  <path d="M 0 20 Q 0 0 20 0 L 480 0 Q 500 0 500 20 L 500 90 L 0 90 Z" fill="url(#qrisHeader)"/>
+
+  <!-- Official QRIS Text & National Standard Logo -->
+  <text x="250" y="48" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" letter-spacing="4">
+    QRIS
+  </text>
+  <text x="250" y="74" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" fill="#FFE8E8" letter-spacing="1.5">
+    QR CODE STANDAR PEMBAYARAN NASIONAL
+  </text>
+
+  <!-- Merchant Info -->
+  <text x="250" y="130" text-anchor="middle" font-family="'Merriweather', Georgia, serif" font-size="20" font-weight="bold" fill="#261F1A">
+    ABOOK STORE BOGOR TIMUR
+  </text>
+  <text x="250" y="152" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#695C52">
+    NMID : ID1026000000000 • A1
+  </text>
+
+  <!-- Inner QR Code Frame -->
+  <rect x="75" y="175" width="350" height="350" rx="16" fill="#FBF9F5" stroke="#EFE9DB" stroke-width="2"/>
+
+  <!-- QR Position Detection Patterns (Top Left, Top Right, Bottom Left) -->
+  <!-- Top Left Pattern -->
+  <rect x="105" y="205" width="70" height="70" rx="8" fill="#15100C"/>
+  <rect x="117" y="217" width="46" height="46" rx="4" fill="#FBF9F5"/>
+  <rect x="127" y="227" width="26" height="26" rx="2" fill="#15100C"/>
+
+  <!-- Top Right Pattern -->
+  <rect x="325" y="205" width="70" height="70" rx="8" fill="#15100C"/>
+  <rect x="337" y="217" width="46" height="46" rx="4" fill="#FBF9F5"/>
+  <rect x="347" y="227" width="26" height="26" rx="2" fill="#15100C"/>
+
+  <!-- Bottom Left Pattern -->
+  <rect x="105" y="425" width="70" height="70" rx="8" fill="#15100C"/>
+  <rect x="117" y="437" width="46" height="46" rx="4" fill="#FBF9F5"/>
+  <rect x="127" y="447" width="26" height="26" rx="2" fill="#15100C"/>
+
+  <!-- Decorative Matrix Modules -->
+  <!-- Row 1 -->
+  <rect x="190" y="205" width="14" height="28" fill="#15100C"/>
+  <rect x="220" y="205" width="28" height="14" fill="#15100C"/>
+  <rect x="260" y="205" width="14" height="28" fill="#15100C"/>
+  <rect x="290" y="205" width="20" height="14" fill="#15100C"/>
+
+  <!-- Center Matrix -->
+  <rect x="190" y="250" width="28" height="14" fill="#15100C"/>
+  <rect x="230" y="235" width="14" height="40" fill="#15100C"/>
+  <rect x="260" y="250" width="45" height="14" fill="#15100C"/>
+
+  <!-- Center Abook Logo Emblem inside QR -->
+  <rect x="215" y="315" width="70" height="70" rx="12" fill="#261F1A" stroke="#FFFFFF" stroke-width="3"/>
+  <path d="M 250 327 L 270 365 L 261 365 L 256 354 L 244 354 L 239 365 L 230 365 Z" fill="none" stroke="#FAF7F2" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M 241 350 C 244 347 247 346 250 347 C 253 346 256 347 259 350" stroke="#C25E34" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Lower Matrix Modules -->
+  <rect x="190" y="400" width="40" height="14" fill="#15100C"/>
+  <rect x="245" y="395" width="14" height="35" fill="#15100C"/>
+  <rect x="275" y="410" width="30" height="14" fill="#15100C"/>
+  <rect x="320" y="395" width="14" height="40" fill="#15100C"/>
+
+  <rect x="190" y="435" width="14" height="60" fill="#15100C"/>
+  <rect x="220" y="450" width="40" height="14" fill="#15100C"/>
+  <rect x="280" y="440" width="14" height="55" fill="#15100C"/>
+  <rect x="310" y="460" width="35" height="14" fill="#15100C"/>
+  <rect x="360" y="435" width="35" height="14" fill="#15100C"/>
+  <rect x="360" y="465" width="14" height="30" fill="#15100C"/>
+
+  <!-- Accepted Payments Strip -->
+  <text x="250" y="555" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#695C52" letter-spacing="1">
+    MENERIMA PEMBAYARAN SEMUA BANK &amp; DOMPET DIGITAL
+  </text>
+  <text x="250" y="575" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#958B85">
+    BCA • Mandiri • BRI • BNI • GoPay • OVO • DANA • ShopeePay
+  </text>
+
+  <!-- Bottom Instructions Bar -->
+  <rect x="25" y="605" width="450" height="50" rx="10" fill="#F6EDD7"/>
+  <text x="250" y="626" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#261F1A">
+    Scan QRIS melalui aplikasi Mobile Banking atau E-Wallet Anda
+  </text>
+  <text x="250" y="643" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#695C52">
+    Verifikasi instan &amp; konfirmasi pemesanan cepat oleh admin toko
+  </text>
+</svg>
