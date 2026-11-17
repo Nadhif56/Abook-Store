@@ -1,7 +1,7 @@
 # Progres Proyek - Abook Store
 
-Terakhir diperbarui: 16 November 2026  
-Posisi saat ini: **Step 4 - Deploy & Integrasi Google OAuth Resmi**
+Terakhir diperbarui: 17 November 2026  
+Posisi saat ini: **Step 4 - Toko Buku Hybrid (Digital Gutendex & Fisik) Selesai**
 
 ## Checklist
 - [x] Inisiasi (data usaha & konsep desain terkumpul)
@@ -39,10 +39,16 @@ Posisi saat ini: **Step 4 - Deploy & Integrasi Google OAuth Resmi**
   - [x] Proteksi Server & Validasi Data Pesanan (Autentikasi sesi, isolasi akses per-user, validasi admin)
   - [x] QA & Pengujian E2E Otomatis Berhasil Lolos 100%
   - [x] Dikonfirmasi pengguna
+- [x] FITUR EKSTRA - Toko Buku Hybrid (Digital Gutendex & Cetak Fisik)
+  - [x] Integrasi API Gutendex (`/api/ebooks`) mencakup 70.000+ buku digital dunia
+  - [x] Halaman Eksplorasi E-Book Digital (`/ebooks`) dengan live search dan filter topik
+  - [x] Master Toggle di Beranda (Buku Cetak Fisik vs E-Book Digital Gutendex)
+  - [x] Fitur Baca E-Book Online, Unduh EPUB, dan Pesan Versi Cetak Fisik
+  - [x] Integrasi E-Book ke Form Pemesanan & Pembayaran QRIS (`/pesan`)
+  - [x] Integrasi Google OAuth 2.0 Akun Resmi (Google Cloud Client ID & Secret)
 - [ ] STEP 4 - Deploy & maintenance
   - [x] Persiapan Git & `.gitignore` (file rahasia `.env*`, `code.gs`, `setup.gs`, dan `public/uploads/*` terisolasi)
   - [x] Pembuatan log pemeliharaan (`documentation/MAINTENANCE.md`)
-  - [x] Integrasi Resmi Google OAuth 2.0 (Akun Google Asli via Google Cloud Console Client ID & Secret)
   - [ ] Push ke repository GitHub
   - [ ] Impor project di Vercel & isi Environment Variables
   - [ ] Deployment Google Apps Script Web App aktif
@@ -51,6 +57,6 @@ Posisi saat ini: **Step 4 - Deploy & Integrasi Google OAuth Resmi**
   - [ ] Dikonfirmasi pengguna
 
 ## Catatan & Keputusan
+- **Toko Buku Hybrid:** Pengunjung dapat membaca atau mengunduh puluhan ribu e-book digital gratis dari Gutendex (Project Gutenberg), sekaligus dapat memesan buku cetak fisik kurasi toko atau versi cetak dari e-book yang disukai melalui sistem tiket & QRIS Abook Store.
 - **Google OAuth 2.0 Asli:** Terhubung langsung ke `accounts.google.com` menggunakan Google Client ID resmi (`516627881470-gt09uk5nubkecqll0m51korbuqv7djdn.apps.googleusercontent.com`).
 - **Aset Gambar Lokal:** Semua foto dan sampul buku telah dialihkan ke file lokal beresolusi tinggi di `public/images/`.
-- **Sistem Pemesanan Step 3:** Tiket pemesanan buku, barcode QRIS Abook Store, dan integrasi WhatsApp.
