@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
-import { BookOpen, Sparkles, MapPin, ArrowRight, ShieldCheck, Truck } from "lucide-react";
+import { BookOpen, Sparkles, MapPin, ArrowRight, Smartphone, BookMarked, ShieldCheck, Truck } from "lucide-react";
 
 export function Hero() {
   return (
@@ -21,12 +22,12 @@ export function Hero() {
             {/* Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container border border-paper-border text-espresso-deep text-xs font-semibold tracking-wider uppercase mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-terracotta animate-pulse" />
-              <span>Toko Buku Bogor Timur (Cileungsi / Jonggol)</span>
+              <span>Toko Buku Digital & Fisik • Bogor Timur (Cileungsi / Jonggol)</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-espresso-deep leading-[1.18] tracking-tight mb-6">
-              Temukan Bacaan Bermakna, Buka Jendela Dunia dengan{" "}
+              Jelajahi Ribuan E-Book Digital & Koleksi Buku Cetak Pilihan dengan{" "}
               <span className="text-terracotta relative inline-block underline decoration-paper-sand decoration-wavy decoration-1 underline-offset-8">
                 Harga Terjangkau
               </span>
@@ -34,41 +35,63 @@ export function Hero() {
 
             {/* Subheading */}
             <p className="text-secondary text-base sm:text-lg leading-relaxed mb-8 max-w-2xl font-light">
-              {siteConfig.description}
+              Abook Store menghadirkan ekosistem literasi lengkap: jelajahi 70.000+ e-book digital klasik & modern gratis langsung di browser, atau pesan buku cetak fisik kurasi terbaik dengan pengiriman cepat ke seluruh Indonesia.
             </p>
 
             {/* CTA Group */}
             <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto mb-12">
-              <a
-                href="#katalog"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-espresso-deep hover:bg-olive-umber text-ivory-bright font-semibold text-sm sm:text-base shadow-card transition-all duration-200 group"
+              <Link
+                href="/ebooks"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-terracotta hover:bg-terracotta-hover text-white font-semibold text-sm sm:text-base shadow-card transition-all duration-200 group"
               >
-                <BookOpen className="w-5 h-5 text-terracotta transition-transform group-hover:scale-110" />
-                <span>Jelajahi Koleksi Buku</span>
+                <Smartphone className="w-5 h-5 transition-transform group-hover:scale-110" />
+                <span>Baca 70.000+ E-Book Gratis</span>
                 <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-              </a>
+              </Link>
 
               <a
-                href="#kontak"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-paper-border text-espresso-deep font-semibold text-sm sm:text-base transition-colors duration-200"
+                href="#katalog"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-espresso-deep hover:bg-olive-umber text-ivory-bright font-semibold text-sm sm:text-base transition-colors duration-200"
               >
-                <MapPin className="w-4 h-4 text-terracotta" />
-                <span>Kunjungi Toko Fisik</span>
+                <BookOpen className="w-5 h-5 text-terracotta" />
+                <span>Beli Buku Cetak Fisik</span>
               </a>
             </div>
 
             {/* Metrics Strip */}
             <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-surface-container-low border border-paper-border/80 shadow-subtle">
-              {siteConfig.stats.map((stat, idx) => (
-                <div key={idx} className="flex flex-col">
-                  <span className="font-serif text-2xl lg:text-3xl font-bold text-espresso-deep">
-                    {stat.value}
-                  </span>
-                  <span className="text-xs text-secondary font-medium mt-0.5">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
+              <div className="flex flex-col">
+                <span className="font-serif text-2xl lg:text-3xl font-bold text-espresso-deep">
+                  70.000+
+                </span>
+                <span className="text-xs text-secondary font-medium mt-0.5">
+                  E-Book Digital Bebas
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-2xl lg:text-3xl font-bold text-espresso-deep">
+                  1.500+
+                </span>
+                <span className="text-xs text-secondary font-medium mt-0.5">
+                  Judul Cetak Fisik
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-2xl lg:text-3xl font-bold text-espresso-deep">
+                  100%
+                </span>
+                <span className="text-xs text-secondary font-medium mt-0.5">
+                  Buku Original
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-2xl lg:text-3xl font-bold text-espresso-deep">
+                  4.9/5
+                </span>
+                <span className="text-xs text-secondary font-medium mt-0.5">
+                  Ulasan Pembaca
+                </span>
+              </div>
             </div>
           </div>
 

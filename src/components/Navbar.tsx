@@ -40,9 +40,10 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Beranda", href: "/#beranda" },
+    { name: "E-Book Digital", href: "/ebooks", isEbook: true },
+    { name: "Buku Fisik", href: "/#katalog" },
     { name: "Tentang Kami", href: "/#tentang" },
     { name: "Keunggulan", href: "/#layanan" },
-    { name: "Katalog Pilihan", href: "/#katalog" },
     { name: "Kabar & Resensi", href: "/#kabar" },
     { name: "Lokasi & Kontak", href: "/#kontak" },
   ];
@@ -68,13 +69,22 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1" aria-label="Navigasi Utama">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
-                className="px-3 py-2 rounded-lg text-sm font-medium text-on-surface-variant hover:text-espresso-deep hover:bg-surface-container/60 transition-colors"
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                  link.isEbook
+                    ? "text-terracotta font-bold hover:bg-terracotta/10"
+                    : "text-on-surface-variant hover:text-espresso-deep hover:bg-surface-container/60"
+                }`}
               >
-                {link.name}
-              </a>
+                <span>{link.name}</span>
+                {link.isEbook && (
+                  <span className="px-1.5 py-0.5 rounded-full bg-terracotta text-white text-[10px] font-bold">
+                    70k+
+                  </span>
+                )}
+              </Link>
             ))}
           </nav>
 
@@ -152,14 +162,23 @@ export function Navbar() {
         <div className="lg:hidden bg-paper-canvas border-b border-paper-border px-4 pt-3 pb-6 space-y-2 shadow-card">
           <nav className="flex flex-col space-y-1">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2.5 rounded-lg text-base font-medium text-espresso-deep hover:bg-surface-container transition-colors"
+                className={`px-3 py-2.5 rounded-lg text-base font-medium transition-colors flex items-center justify-between ${
+                  link.isEbook
+                    ? "text-terracotta font-bold bg-terracotta/5"
+                    : "text-espresso-deep hover:bg-surface-container"
+                }`}
               >
-                {link.name}
-              </a>
+                <span>{link.name}</span>
+                {link.isEbook && (
+                  <span className="px-2 py-0.5 rounded-full bg-terracotta text-white text-[10px] font-bold">
+                    70k+ E-Book
+                  </span>
+                )}
+              </Link>
             ))}
           </nav>
           <div className="pt-4 border-t border-paper-border/60 flex flex-col gap-2">

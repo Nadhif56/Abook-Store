@@ -62,10 +62,14 @@ export async function POST(request: Request) {
       );
     }
 
-    // Cari data buku dari katalog
+    // Cari data buku dari katalog fisik atau dari pesanan cetak e-book
     const targetBook = siteConfig.sampleBooks.find((b) => b.id === book_id);
-    const bookTitle = targetBook ? targetBook.title : "Buku Pilihan";
-    const pricePerUnit = targetBook ? targetBook.price : 50000;
+    const bookTitle = targetBook
+      ? targetBook.title
+      : (body.book_title ? String(body.book_title).trim() : "Buku Cetak Pilihan");
+    const pricePerUnit = targetBook
+      ? targetBook.price
+      : (Number(body.price_per_unit) > 0 ? Number(body.price_per_unit) : 85000);
     const totalAmount = pricePerUnit * qty;
 
     const newOrder = await createOrder({

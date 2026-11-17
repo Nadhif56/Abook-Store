@@ -24,6 +24,26 @@ function OrderFormContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const initialBookId = searchParams.get("bookId") || siteConfig.sampleBooks[0].id;
+  const queryTitle = searchParams.get("bookTitle");
+  const queryPrice = searchParams.get("price");
+  const queryCover = searchParams.get("cover");
+
+  // Jika dipesan dari katalog e-book Gutendex sebagai edisi cetak fisik
+  const customEbook = queryTitle
+    ? {
+        id: initialBookId,
+        title: queryTitle,
+        category: "Edisi Cetak E-Book",
+        author: "Penulis E-Book",
+        price: queryPrice ? parseInt(queryPrice, 10) : 85000,
+        coverImage: queryCover || "/images/book-metodologi.svg",
+        synopsis: `Pemesanan buku edisi cetak fisik berkualitas dari e-book digital '${queryTitle}'.`,
+      }
+    : null;
+
+  const allAvailableBooks = customEbook
+    ? [customEbook, ...siteConfig.sampleBooks]
+    : siteConfig.sampleBooks;
 
   const [selectedBookId, setSelectedBookId] = useState(initialBookId);
   const [quantity, setQuantity] = useState(1);
@@ -54,8 +74,8 @@ function OrderFormContent() {
   }, []);
 
   const selectedBook =
-    siteConfig.sampleBooks.find((b) => b.id === selectedBookId) ||
-    siteConfig.sampleBooks[0];
+    allAvailableBooks.find((b) => b.id === selectedBookId) ||
+    allAvailableBooks[0];
 
   const totalAmount = selectedBook.price * quantity;
 
@@ -84,6 +104,8 @@ function OrderFormContent() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           book_id: selectedBook.id,
+          book_title: selectedBook.title,
+          price_per_unit: selectedBook.price,
           quantity,
           recipient_name: recipientName,
           phone,
@@ -184,7 +206,7 @@ function OrderFormContent() {
                 onChange={(e) => setSelectedBookId(e.target.value)}
                 className="w-full px-3 py-2 rounded-xl border border-paper-border bg-paper-canvas text-xs sm:text-sm font-semibold text-espresso-deep focus:outline-none focus:ring-2 focus:ring-terracotta"
               >
-                {siteConfig.sampleBooks.map((b) => (
+                {allAvailableBooks.map((b) => (
                   <option key={b.id} value={b.id}>
                     {b.title} — {formatRupiah(b.price)}
                   </option>
