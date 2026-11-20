@@ -46,6 +46,7 @@ Posisi saat ini: **Step 4 - Toko Buku Hybrid (Digital Gutendex & Fisik) Selesai*
   - [x] Fitur Baca E-Book Online, Unduh EPUB, dan Pesan Versi Cetak Fisik
   - [x] Integrasi E-Book ke Form Pemesanan & Pembayaran QRIS (`/pesan`)
   - [x] Integrasi Google OAuth 2.0 Akun Resmi (Google Cloud Client ID & Secret)
+  - [x] Pembaruan Nomor Resmi WhatsApp & Telepon Toko (`082312633697`)
 - [ ] STEP 4 - Deploy & maintenance
   - [x] Persiapan Git & `.gitignore` (file rahasia `.env*`, `code.gs`, `setup.gs`, dan `public/uploads/*` terisolasi)
   - [x] Pembuatan log pemeliharaan (`documentation/MAINTENANCE.md`)
