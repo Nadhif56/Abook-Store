@@ -28,21 +28,21 @@ function OrderFormContent() {
   const queryPrice = searchParams.get("price");
   const queryCover = searchParams.get("cover");
 
-  // Jika dipesan dari katalog Google Books sebagai edisi cetak fisik
-  const customEbook = queryTitle
+  // Jika dipesan dengan judul khusus atau dari daftar buku toko
+  const customBook = queryTitle
     ? {
         id: initialBookId,
         title: queryTitle,
-        category: "Edisi Cetak Google Books",
+        category: "Koleksi Pilihan",
         author: "Penulis Buku",
-        price: queryPrice ? parseInt(queryPrice, 10) : 85000,
+        price: queryPrice ? parseInt(queryPrice, 10) : 65000,
         coverImage: queryCover || "/images/book-bumi-manusia.svg",
-        synopsis: `Pemesanan buku edisi cetak fisik berkualitas dari koleksi Google Books '${queryTitle}'.`,
+        synopsis: `Pemesanan buku '${queryTitle}' di Abook Store.`,
       }
     : null;
 
-  const allAvailableBooks = customEbook
-    ? [customEbook, ...siteConfig.sampleBooks]
+  const allAvailableBooks = customBook
+    ? [customBook, ...siteConfig.sampleBooks]
     : siteConfig.sampleBooks;
 
   const [selectedBookId, setSelectedBookId] = useState(initialBookId);

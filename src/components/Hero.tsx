@@ -3,7 +3,16 @@
 import React from "react";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
-import { BookOpen, Sparkles, MapPin, ArrowRight, Smartphone, BookMarked, ShieldCheck, Truck } from "lucide-react";
+import {
+  BookOpen,
+  Sparkles,
+  MapPin,
+  ArrowRight,
+  MessageCircle,
+  ShieldCheck,
+  Truck,
+  CheckCircle2,
+} from "lucide-react";
 
 export function Hero() {
   return (
@@ -22,12 +31,12 @@ export function Hero() {
             {/* Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container border border-paper-border text-espresso-deep text-xs font-semibold tracking-wider uppercase mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-terracotta animate-pulse" />
-              <span>Toko Buku Digital & Fisik • Bogor Timur (Cileungsi / Jonggol)</span>
+              <span>Toko Buku Kurasi & Literasi Pilihan • Bogor Timur</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-espresso-deep leading-[1.18] tracking-tight mb-6">
-              Jelajahi Ribuan E-Book Digital & Koleksi Buku Cetak Pilihan dengan{" "}
+              Koleksi Buku Berkualitas & Bestseller dengan{" "}
               <span className="text-terracotta relative inline-block underline decoration-paper-sand decoration-wavy decoration-1 underline-offset-8">
                 Harga Terjangkau
               </span>
@@ -35,26 +44,28 @@ export function Hero() {
 
             {/* Subheading */}
             <p className="text-secondary text-base sm:text-lg leading-relaxed mb-8 max-w-2xl font-light">
-              Abook Store menghadirkan ekosistem literasi lengkap: jelajahi pratinjau (preview) resmi buku dari Google Books langsung di browser, atau pesan buku cetak fisik kurasi terbaik dengan pengiriman cepat ke seluruh Indonesia.
+              Abook Store menyediakan ribuan judul buku cetak pilihan—mulai dari novel fiksi, non-fiksi, pengembangan diri, bisnis, hingga buku edukasi kuliah. Dapatkan buku bacaan original dengan harga ramah kantong dan pengiriman cepat ke seluruh Indonesia.
             </p>
 
             {/* CTA Group */}
             <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto mb-12">
-              <Link
-                href="/ebooks"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-terracotta hover:bg-terracotta-hover text-white font-semibold text-sm sm:text-base shadow-card transition-all duration-200 group"
-              >
-                <Smartphone className="w-5 h-5 transition-transform group-hover:scale-110" />
-                <span>Pratinjau Google Books</span>
-                <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-              </Link>
-
               <a
                 href="#katalog"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-terracotta hover:bg-terracotta-hover text-white font-semibold text-sm sm:text-base shadow-card transition-all duration-200 group"
+              >
+                <BookOpen className="w-5 h-5 transition-transform group-hover:scale-110" />
+                <span>Lihat Katalog Buku</span>
+                <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+              </a>
+
+              <a
+                href={`https://wa.me/${siteConfig.whatsapp}?text=Halo%20Abook%20Store%2C%20saya%20ingin%20bertanya%20katalog%20buku`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-espresso-deep hover:bg-olive-umber text-ivory-bright font-semibold text-sm sm:text-base transition-colors duration-200"
               >
-                <BookOpen className="w-5 h-5 text-terracotta" />
-                <span>Beli Buku Cetak Fisik</span>
+                <MessageCircle className="w-5 h-5 text-terracotta" />
+                <span>Chat WhatsApp Toko</span>
               </a>
             </div>
 
@@ -62,18 +73,10 @@ export function Hero() {
             <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-surface-container-low border border-paper-border/80 shadow-subtle">
               <div className="flex flex-col">
                 <span className="font-serif text-2xl lg:text-3xl font-bold text-espresso-deep">
-                  Google Books
+                  24+
                 </span>
                 <span className="text-xs text-secondary font-medium mt-0.5">
-                  Pratinjau Digital Resmi
-                </span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-2xl lg:text-3xl font-bold text-espresso-deep">
-                  1.500+
-                </span>
-                <span className="text-xs text-secondary font-medium mt-0.5">
-                  Judul Cetak Fisik
+                  Judul Kurasi Bestseller
                 </span>
               </div>
               <div className="flex flex-col">
@@ -81,15 +84,23 @@ export function Hero() {
                   100%
                 </span>
                 <span className="text-xs text-secondary font-medium mt-0.5">
-                  Buku Original
+                  Buku Asli & Terjamin
                 </span>
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-2xl lg:text-3xl font-bold text-espresso-deep">
-                  4.9/5
+                  Rp 45rb+
                 </span>
                 <span className="text-xs text-secondary font-medium mt-0.5">
-                  Ulasan Pembaca
+                  Harga Sangat Terjangkau
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-2xl lg:text-3xl font-bold text-espresso-deep">
+                  4.9 / 5
+                </span>
+                <span className="text-xs text-secondary font-medium mt-0.5">
+                  Ulasan Pembaca Puas
                 </span>
               </div>
             </div>
@@ -98,56 +109,47 @@ export function Hero() {
           {/* Right Visual Column */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Stacked Graphic Frame */}
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-4 border-paper-canvas bg-surface-container">
-                <img
-                  src="/images/hero-store.svg"
-                  alt="Suasana rak buku estetik di toko buku Abook Store"
-                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                  loading="eager"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "/images/hero-store.svg";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-espresso-deep/80 via-espresso-deep/20 to-transparent" />
-
-                {/* Floating Quote Badge */}
-                <div className="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-paper-canvas/95 backdrop-blur-md border border-paper-border shadow-card">
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 rounded-lg bg-surface-container text-terracotta shrink-0">
-                      <Sparkles className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="font-serif italic text-xs sm:text-sm text-espresso-deep font-medium leading-snug">
-                        “Buku adalah teman terbaik yang selalu menyajikan percakapan paling hening dan bermakna.”
-                      </p>
-                      <p className="text-[11px] font-sans text-secondary font-semibold uppercase tracking-wider mt-1.5">
-                        — Filosofi Abook Store
-                      </p>
-                    </div>
-                  </div>
+              {/* Main Store Graphic Container */}
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-card border border-paper-border bg-paper-canvas p-3">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container relative">
+                  <img
+                    src="/images/hero-store.svg"
+                    alt="Suasana Toko Buku Abook Store Bogor Timur"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                  {/* Subtle Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-espresso-deep/30 to-transparent pointer-events-none" />
                 </div>
               </div>
 
-              {/* Floating Verified Badge */}
-              <div className="absolute -top-4 -left-4 sm:-top-5 sm:-left-5 bg-paper-canvas border border-paper-border px-3.5 py-2.5 rounded-xl shadow-card flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700">
-                  <ShieldCheck className="w-5 h-5" />
+              {/* Floating Badge 1: Location */}
+              <div className="absolute -bottom-6 -left-6 z-20 bg-paper-canvas/95 backdrop-blur-md p-4 rounded-2xl shadow-card border border-paper-border flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-terracotta/10 text-terracotta flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-espresso-deep">100% Original</div>
-                  <div className="text-[10px] text-secondary">Kondisi Prima</div>
+                  <p className="text-[11px] uppercase tracking-wider text-secondary font-bold">
+                    Lokasi Toko
+                  </p>
+                  <p className="text-xs font-serif font-bold text-espresso-deep">
+                    Bogor Timur (Cileungsi / Jonggol)
+                  </p>
                 </div>
               </div>
 
-              {/* Floating Delivery Badge */}
-              <div className="absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-5 bg-paper-canvas border border-paper-border px-3.5 py-2.5 rounded-xl shadow-card flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-800">
+              {/* Floating Badge 2: Delivery */}
+              <div className="absolute -top-6 -right-6 z-20 bg-paper-canvas/95 backdrop-blur-md p-4 rounded-2xl shadow-card border border-paper-border flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-700 flex items-center justify-center shrink-0">
                   <Truck className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-espresso-deep">Kirim Cepat</div>
-                  <div className="text-[10px] text-secondary">Packing Berlapis Aman</div>
+                  <p className="text-[11px] uppercase tracking-wider text-secondary font-bold">
+                    Pengiriman
+                  </p>
+                  <p className="text-xs font-serif font-bold text-espresso-deep">
+                    Siap Kirim ke Seluruh Indonesia
+                  </p>
                 </div>
               </div>
             </div>
@@ -157,4 +159,3 @@ export function Hero() {
     </section>
   );
 }
-

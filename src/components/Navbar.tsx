@@ -40,8 +40,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Beranda", href: "/#beranda" },
-    { name: "Google Books", href: "/ebooks", isEbook: true },
-    { name: "Buku Fisik", href: "/#katalog" },
+    { name: "Katalog Buku", href: "/#katalog" },
     { name: "Tentang Kami", href: "/#tentang" },
     { name: "Keunggulan", href: "/#layanan" },
     { name: "Kabar & Resensi", href: "/#kabar" },
@@ -72,18 +71,9 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 ${
-                  link.isEbook
-                    ? "text-terracotta font-bold hover:bg-terracotta/10"
-                    : "text-on-surface-variant hover:text-espresso-deep hover:bg-surface-container/60"
-                }`}
+                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors text-on-surface-variant hover:text-espresso-deep hover:bg-surface-container/60"
               >
                 <span>{link.name}</span>
-                {link.isEbook && (
-                  <span className="px-1.5 py-0.5 rounded-full bg-terracotta text-white text-[10px] font-bold">
-                    Preview
-                  </span>
-                )}
               </Link>
             ))}
           </nav>
@@ -166,18 +156,9 @@ export function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`px-3 py-2.5 rounded-lg text-base font-medium transition-colors flex items-center justify-between ${
-                  link.isEbook
-                    ? "text-terracotta font-bold bg-terracotta/5"
-                    : "text-espresso-deep hover:bg-surface-container"
-                }`}
+                className="px-3 py-2.5 rounded-lg text-base font-medium transition-colors text-espresso-deep hover:bg-surface-container"
               >
                 <span>{link.name}</span>
-                {link.isEbook && (
-                  <span className="px-2 py-0.5 rounded-full bg-terracotta text-white text-[10px] font-bold">
-                    Google Books Preview
-                  </span>
-                )}
               </Link>
             ))}
           </nav>
