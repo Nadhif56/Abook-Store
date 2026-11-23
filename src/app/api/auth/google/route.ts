@@ -9,8 +9,12 @@ export async function GET(request: Request) {
 
   // Dapatkan Base URL dinamis (localhost atau URL Vercel production)
   const host = request.headers.get("x-forwarded-host") || request.headers.get("host") || "localhost:3000";
-  const proto = request.headers.get("x-forwarded-proto") || (host.includes("localhost") || host.includes("127.0.0.1") ? "http" : "https");
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || `${proto}://${host}`;
+  const isLocal = host.includes("localhost") || host.includes("127.0.0.1");
+  const proto = request.headers.get("x-forwarded-proto") || (isLocal ? "http" : "https");
+  let baseUrl = `${proto}://${host}`;
+  if (process.env.NEXT_PUBLIC_SITE_URL && !isLocal) {
+    baseUrl = process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
+  }
 
   const clientId = process.env.GOOGLE_CLIENT_ID;
   const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
