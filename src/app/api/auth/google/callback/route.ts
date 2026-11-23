@@ -28,12 +28,12 @@ export async function GET(request: Request) {
     return NextResponse.redirect(loginUrl);
   }
 
-  const host = request.headers.get("x-forwarded-host") || request.headers.get("host") || "localhost:3000";
+  const host = (request.headers.get("x-forwarded-host") || request.headers.get("host") || "localhost:3000").trim();
   const isLocal = host.includes("localhost") || host.includes("127.0.0.1");
   const proto = request.headers.get("x-forwarded-proto") || (isLocal ? "http" : "https");
   let baseUrl = `${proto}://${host}`;
   if (process.env.NEXT_PUBLIC_SITE_URL && !isLocal) {
-    baseUrl = process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
+    baseUrl = process.env.NEXT_PUBLIC_SITE_URL.trim().replace(/[\r\n\s]+/g, "").replace(/\/$/, "");
   }
   const redirectUri = `${baseUrl}/api/auth/google/callback`;
 
