@@ -7,7 +7,6 @@ import { Footer } from "@/components/Footer";
 import {
   BookOpen,
   Search,
-  Download,
   ExternalLink,
   ShoppingBag,
   Sparkles,
@@ -15,34 +14,40 @@ import {
   ChevronLeft,
   ChevronRight,
   AlertCircle,
-  BookMarked,
   Filter,
+  Star,
+  Layers,
 } from "lucide-react";
 
-interface Ebook {
-  id: number;
+interface Book {
+  id: string | number;
   title: string;
   author: string;
+  publisher?: string;
+  publishedDate?: string;
+  pageCount?: number;
   cover: string;
+  previewUrl: string;
   readUrl: string;
-  downloadEpub: string;
+  infoUrl?: string;
   summary: string;
   category: string;
-  downloadCount: number;
+  rating?: number;
   physicalPrice: number;
 }
 
 const TOPIC_PRESETS = [
   { id: "all", label: "Semua Kategori" },
   { id: "fiction", label: "Sastra & Fiksi" },
+  { id: "self-help", label: "Pengembangan Diri" },
+  { id: "business", label: "Bisnis & Finansial" },
   { id: "philosophy", label: "Filsafat & Pemikiran" },
   { id: "history", label: "Sejarah & Peradaban" },
-  { id: "adventure", label: "Petualangan & Misteri" },
   { id: "science", label: "Sains & Teknologi" },
 ];
 
 export default function EbooksPage() {
-  const [books, setBooks] = useState<Ebook[]>([]);
+  const [books, setBooks] = useState<Book[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTopic, setSelectedTopic] = useState("all");
@@ -50,7 +55,7 @@ export default function EbooksPage() {
   const [totalCount, setTotalCount] = useState(0);
   const [hasNext, setHasNext] = useState(false);
   const [hasPrev, setHasPrev] = useState(false);
-  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
 
   const fetchBooks = async (page: number, search: string, topic: string) => {
     setIsLoading(true);
@@ -72,7 +77,7 @@ export default function EbooksPage() {
         setBooks([]);
       }
     } catch (err) {
-      console.error("Error loading ebooks:", err);
+      console.error("Error loading books:", err);
       setBooks([]);
     } finally {
       setIsLoading(false);
@@ -98,6 +103,14 @@ export default function EbooksPage() {
     return new Intl.NumberFormat("id-ID").format(num);
   };
 
+  const formatRupiah = (num: number) => {
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      maximumFractionDigits: 0,
+    }).format(num);
+  };
+
   return (
     <div className="min-h-screen bg-paper-canvas text-on-surface flex flex-col">
       <Navbar />
@@ -108,14 +121,14 @@ export default function EbooksPage() {
           <div className="max-w-5xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-paper-canvas border border-paper-border text-terracotta text-xs font-bold uppercase tracking-wider mb-4 shadow-subtle">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Perpustakaan Digital Terbuka • 70.000+ Koleksi E-Book</span>
+              <span>Google Books Preview • Pratinjau Resmi & Edisi Cetak Fisik</span>
             </div>
 
             <h1 className="font-serif text-3xl sm:text-5xl font-bold text-espresso-deep tracking-tight mb-4 leading-tight">
-              Koleksi E-Book Digital & Versi Cetak
+              Pratinjau Google Books & Buku Cetak
             </h1>
             <p className="text-secondary text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-              Jelajahi karya sastra klasik, filsafat, dan pengetahuan dunia dari Project Gutenberg. Baca langsung di browser Anda secara gratis atau pesan edisi cetak fisiknya ke Abook Store.
+              Jelajahi pratinjau buku digital resmi dari Google Books. Baca preview isi buku langsung secara legal di Google Books, atau pesan edisi cetak fisik berkualitas ke Abook Store.
             </p>
 
             {/* Search Box */}
@@ -130,7 +143,7 @@ export default function EbooksPage() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Cari judul e-book atau nama penulis (contoh: Sherlock Holmes, Jane Austen, Dracula)..."
+                placeholder="Cari judul buku atau penulis (contoh: Atomic Habits, Leila Chudori, Filosofi Teras)..."
                 className="w-full py-3.5 px-3 bg-transparent text-espresso-deep placeholder:text-secondary/60 text-sm focus:outline-none"
               />
               <button
@@ -144,7 +157,7 @@ export default function EbooksPage() {
             {/* Filter Pills */}
             <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
               <span className="text-xs font-bold text-secondary flex items-center gap-1 mr-1">
-                <Filter className="w-3 h-3" /> Topik:
+                <Filter className="w-3 h-3" /> Kategori:
               </span>
               {TOPIC_PRESETS.map((t) => (
                 <button
@@ -169,12 +182,12 @@ export default function EbooksPage() {
             <div>
               <h2 className="font-serif text-xl font-bold text-espresso-deep flex items-center gap-2">
                 <BookOpen className="w-5 h-5 text-terracotta" />
-                <span>Katalog E-Book Digital</span>
+                <span>Katalog Buku Google Books</span>
               </h2>
               <p className="text-xs text-secondary mt-0.5">
                 {totalCount > 0
-                  ? `Ditemukan ${formatNumber(totalCount)} judul e-book siap baca`
-                  : "Menampilkan koleksi e-book pilihan"}
+                  ? `Menampilkan ${formatNumber(totalCount)} judul terkurasi dengan pratinjau resmi`
+                  : "Menampilkan koleksi buku pilihan"}
               </p>
             </div>
 
@@ -187,16 +200,16 @@ export default function EbooksPage() {
           {isLoading ? (
             <div className="py-20 flex flex-col items-center justify-center text-secondary">
               <Loader2 className="w-8 h-8 animate-spin text-terracotta mb-3" />
-              <p className="text-sm font-serif">Menghubungkan ke basis data e-book Gutendex...</p>
+              <p className="text-sm font-serif">Memuat data pratinjau Google Books...</p>
             </div>
           ) : books.length === 0 ? (
             <div className="py-16 text-center max-w-md mx-auto p-6 rounded-2xl bg-paper-subtle border border-paper-border">
               <AlertCircle className="w-10 h-10 text-muted mx-auto mb-3" />
               <h3 className="font-serif text-lg font-bold text-espresso-deep mb-1">
-                E-Book Tidak Ditemukan
+                Buku Tidak Ditemukan
               </h3>
               <p className="text-xs text-secondary mb-4">
-                Tidak ada e-book yang cocok dengan pencarian &quot;{searchQuery}&quot;. Coba kata kunci lain atau pilih topik di atas.
+                Tidak ada buku yang cocok dengan pencarian &quot;{searchQuery}&quot;. Coba kata kunci lain atau pilih kategori di atas.
               </p>
               <button
                 onClick={() => {
@@ -215,20 +228,20 @@ export default function EbooksPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {books.map((b) => (
                 <article
-                  key={b.id}
+                  key={String(b.id)}
                   className="bg-paper-canvas rounded-2xl border border-paper-border shadow-card hover:shadow-hover hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
                 >
                   {/* Cover Book Banner */}
                   <div className="relative aspect-[3/4] bg-surface-container overflow-hidden flex items-center justify-center border-b border-paper-border/60">
                     <img
                       src={
-                        imageErrors[b.id]
+                        imageErrors[String(b.id)]
                           ? "/images/book-bumi-manusia.svg"
                           : b.cover
                       }
                       alt={b.title}
                       onError={() =>
-                        setImageErrors((prev) => ({ ...prev, [b.id]: true }))
+                        setImageErrors((prev) => ({ ...prev, [String(b.id)]: true }))
                       }
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
@@ -237,10 +250,19 @@ export default function EbooksPage() {
                       {b.category}
                     </span>
 
-                    <span className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-paper-canvas/90 text-secondary text-[10px] font-semibold backdrop-blur-sm flex items-center gap-1 border border-paper-border">
-                      <Download className="w-2.5 h-2.5" />
-                      <span>{formatNumber(b.downloadCount)} baca</span>
-                    </span>
+                    {b.rating && (
+                      <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-amber-500 text-white text-[10px] font-bold backdrop-blur-sm flex items-center gap-1 shadow-sm">
+                        <Star className="w-2.5 h-2.5 fill-current" />
+                        <span>{b.rating}</span>
+                      </span>
+                    )}
+
+                    {b.pageCount && (
+                      <span className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-paper-canvas/90 text-secondary text-[10px] font-semibold backdrop-blur-sm flex items-center gap-1 border border-paper-border">
+                        <Layers className="w-2.5 h-2.5" />
+                        <span>{b.pageCount} hlm</span>
+                      </span>
+                    )}
                   </div>
 
                   {/* Body Content */}
@@ -249,9 +271,14 @@ export default function EbooksPage() {
                       <h3 className="font-serif font-bold text-base text-espresso-deep line-clamp-2 group-hover:text-terracotta transition-colors mb-1 leading-snug">
                         {b.title}
                       </h3>
-                      <p className="text-xs text-secondary font-medium mb-3">
-                        Karya: <span className="text-espresso-deep font-semibold">{b.author}</span>
+                      <p className="text-xs text-secondary font-medium mb-1.5">
+                        Penulis: <span className="text-espresso-deep font-semibold">{b.author}</span>
                       </p>
+                      {b.publisher && (
+                        <p className="text-[10px] text-muted mb-2">
+                          {b.publisher} {b.publishedDate ? `(${b.publishedDate})` : ""}
+                        </p>
+                      )}
                       <p className="text-[11px] text-secondary/80 line-clamp-3 leading-relaxed mb-4">
                         {b.summary}
                       </p>
@@ -259,34 +286,30 @@ export default function EbooksPage() {
 
                     {/* Actions */}
                     <div className="space-y-2 pt-3 border-t border-paper-border/60">
-                      {/* Read Online Button */}
+                      {/* Read Preview on Google Books Button */}
                       <a
-                        href={b.readUrl}
+                        href={b.previewUrl || b.readUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-terracotta hover:bg-terracotta-hover text-white text-xs font-bold transition-all shadow-sm"
                       >
                         <BookOpen className="w-3.5 h-3.5" />
-                        <span>Baca E-Book Online</span>
+                        <span>Baca Pratinjau Google Books</span>
                         <ExternalLink className="w-3 h-3 ml-0.5 opacity-80" />
                       </a>
 
-                      <div className="grid grid-cols-2 gap-2">
-                        {/* Download EPUB */}
-                        <a
-                          href={b.downloadEpub}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-surface-container hover:bg-paper-border/50 text-secondary text-[11px] font-semibold border border-paper-border transition-colors"
-                        >
-                          <Download className="w-3 h-3" />
-                          <span>Unduh EPUB</span>
-                        </a>
+                      {/* Order Physical Book */}
+                      <div className="flex items-center justify-between gap-2 pt-1">
+                        <div className="flex flex-col">
+                          <span className="text-[10px] text-muted">Edisi Cetak:</span>
+                          <span className="text-xs font-bold text-terracotta">
+                            {formatRupiah(b.physicalPrice)}
+                          </span>
+                        </div>
 
-                        {/* Order Physical Book */}
                         <Link
-                          href={`/pesan?bookId=ebook-${b.id}&bookTitle=${encodeURIComponent(b.title)}&price=${b.physicalPrice}&cover=${encodeURIComponent(b.cover)}`}
-                          className="flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-espresso-deep hover:bg-olive-umber text-ivory-bright text-[11px] font-semibold transition-colors shadow-sm"
+                          href={`/pesan?bookId=gb-${b.id}&bookTitle=${encodeURIComponent(b.title)}&price=${b.physicalPrice}&cover=${encodeURIComponent(b.cover)}`}
+                          className="flex items-center justify-center gap-1 py-1.5 px-3 rounded-lg bg-espresso-deep hover:bg-olive-umber text-ivory-bright text-xs font-semibold transition-colors shadow-sm"
                         >
                           <ShoppingBag className="w-3 h-3" />
                           <span>Pesan Fisik</span>

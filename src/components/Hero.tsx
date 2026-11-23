@@ -35,7 +35,7 @@ export function Hero() {
 
             {/* Subheading */}
             <p className="text-secondary text-base sm:text-lg leading-relaxed mb-8 max-w-2xl font-light">
-              Abook Store menghadirkan ekosistem literasi lengkap: jelajahi 70.000+ e-book digital klasik & modern gratis langsung di browser, atau pesan buku cetak fisik kurasi terbaik dengan pengiriman cepat ke seluruh Indonesia.
+              Abook Store menghadirkan ekosistem literasi lengkap: jelajahi pratinjau (preview) resmi buku dari Google Books langsung di browser, atau pesan buku cetak fisik kurasi terbaik dengan pengiriman cepat ke seluruh Indonesia.
             </p>
 
             {/* CTA Group */}
@@ -45,7 +45,7 @@ export function Hero() {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-terracotta hover:bg-terracotta-hover text-white font-semibold text-sm sm:text-base shadow-card transition-all duration-200 group"
               >
                 <Smartphone className="w-5 h-5 transition-transform group-hover:scale-110" />
-                <span>Baca 70.000+ E-Book Gratis</span>
+                <span>Pratinjau Google Books</span>
                 <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
               </Link>
 
@@ -62,10 +62,10 @@ export function Hero() {
             <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-surface-container-low border border-paper-border/80 shadow-subtle">
               <div className="flex flex-col">
                 <span className="font-serif text-2xl lg:text-3xl font-bold text-espresso-deep">
-                  70.000+
+                  Google Books
                 </span>
                 <span className="text-xs text-secondary font-medium mt-0.5">
-                  E-Book Digital Bebas
+                  Pratinjau Digital Resmi
                 </span>
               </div>
               <div className="flex flex-col">

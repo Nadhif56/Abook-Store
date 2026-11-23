@@ -40,7 +40,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Beranda", href: "/#beranda" },
-    { name: "E-Book Digital", href: "/ebooks", isEbook: true },
+    { name: "Google Books", href: "/ebooks", isEbook: true },
     { name: "Buku Fisik", href: "/#katalog" },
     { name: "Tentang Kami", href: "/#tentang" },
     { name: "Keunggulan", href: "/#layanan" },
@@ -81,7 +81,7 @@ export function Navbar() {
                 <span>{link.name}</span>
                 {link.isEbook && (
                   <span className="px-1.5 py-0.5 rounded-full bg-terracotta text-white text-[10px] font-bold">
-                    70k+
+                    Preview
                   </span>
                 )}
               </Link>
@@ -175,7 +175,7 @@ export function Navbar() {
                 <span>{link.name}</span>
                 {link.isEbook && (
                   <span className="px-2 py-0.5 rounded-full bg-terracotta text-white text-[10px] font-bold">
-                    70k+ E-Book
+                    Google Books Preview
                   </span>
                 )}
               </Link>

@@ -28,16 +28,16 @@ function OrderFormContent() {
   const queryPrice = searchParams.get("price");
   const queryCover = searchParams.get("cover");
 
-  // Jika dipesan dari katalog e-book Gutendex sebagai edisi cetak fisik
+  // Jika dipesan dari katalog Google Books sebagai edisi cetak fisik
   const customEbook = queryTitle
     ? {
         id: initialBookId,
         title: queryTitle,
-        category: "Edisi Cetak E-Book",
-        author: "Penulis E-Book",
+        category: "Edisi Cetak Google Books",
+        author: "Penulis Buku",
         price: queryPrice ? parseInt(queryPrice, 10) : 85000,
-        coverImage: queryCover || "/images/book-metodologi.svg",
-        synopsis: `Pemesanan buku edisi cetak fisik berkualitas dari e-book digital '${queryTitle}'.`,
+        coverImage: queryCover || "/images/book-bumi-manusia.svg",
+        synopsis: `Pemesanan buku edisi cetak fisik berkualitas dari koleksi Google Books '${queryTitle}'.`,
       }
     : null;
 

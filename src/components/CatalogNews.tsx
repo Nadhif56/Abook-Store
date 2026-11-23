@@ -11,12 +11,12 @@ export function CatalogNews() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [newsList, setNewsList] = useState<any[]>(siteConfig.news);
 
-  // State untuk e-book Gutendex
+  // State untuk e-book & Google Books
   const [ebooks, setEbooks] = useState<any[]>([]);
   const [loadingEbooks, setLoadingEbooks] = useState<boolean>(false);
-  const [ebookErrors, setEbookErrors] = useState<Record<number, boolean>>({});
+  const [ebookErrors, setEbookErrors] = useState<Record<string | number, boolean>>({});
 
-  // Ambil e-book dari Gutendex jika tab digital aktif
+  // Ambil buku dari Google Books jika tab digital aktif
   useEffect(() => {
     if (storeType === "digital" && ebooks.length === 0) {
       setLoadingEbooks(true);
@@ -141,8 +141,8 @@ export function CatalogNews() {
                 }`}
               >
                 <Smartphone className="w-4 h-4 text-white" />
-                <span>E-Book Digital</span>
-                <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-white/20">70k+</span>
+                <span>Google Books</span>
+                <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-white/20">Preview</span>
               </button>
             </div>
 
@@ -151,7 +151,7 @@ export function CatalogNews() {
                 href="/ebooks"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-terracotta hover:underline self-start sm:self-center"
               >
-                <span>Buka Perpustakaan Lengkap (70.000+ E-Book)</span>
+                <span>Buka Katalog Google Books Lengkap</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
             )}
@@ -312,7 +312,7 @@ export function CatalogNews() {
                             onError={() => setEbookErrors((p) => ({ ...p, [eb.id]: true }))}
                           />
                           <span className="absolute top-2 left-2 bg-espresso-deep text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-sm">
-                            E-Book
+                            Google Books
                           </span>
                         </div>
 
@@ -335,21 +335,21 @@ export function CatalogNews() {
 
                           <div className="pt-3 mt-2 border-t border-paper-border/60 space-y-1.5">
                             <span className="text-[10px] font-bold text-emerald-700 block">
-                              Gratis Baca Online
+                              Pratinjau Google Books
                             </span>
 
                             <a
-                              href={eb.readUrl}
+                              href={eb.previewUrl || eb.readUrl}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="w-full flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-terracotta hover:bg-terracotta-hover text-white text-[11px] font-semibold transition-colors shadow-sm"
                             >
                               <BookOpen className="w-3 h-3" />
-                              <span>Baca E-Book</span>
+                              <span>Lihat Preview</span>
                             </a>
 
                             <Link
-                              href={`/pesan?bookId=ebook-${eb.id}&bookTitle=${encodeURIComponent(eb.title)}&price=${eb.physicalPrice}&cover=${encodeURIComponent(eb.cover)}`}
+                              href={`/pesan?bookId=gb-${eb.id}&bookTitle=${encodeURIComponent(eb.title)}&price=${eb.physicalPrice}&cover=${encodeURIComponent(eb.cover)}`}
                               className="w-full flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-surface-container hover:bg-paper-border/60 text-espresso-deep text-[10px] font-semibold transition-colors border border-paper-border"
                             >
                               <ShoppingBag className="w-3 h-3 text-terracotta" />
@@ -369,10 +369,10 @@ export function CatalogNews() {
                       </div>
                       <div>
                         <h4 className="font-serif font-bold text-sm sm:text-base text-espresso-deep">
-                          Masih Banyak Judul Klasik Lainnya
+                          Jelajahi Koleksi Google Books Lebih Lengkap
                         </h4>
                         <p className="text-xs text-secondary mt-0.5">
-                          Tersedia lebih dari 70.000 judul novel, filsafat, dan sastra dunia dari Project Gutenberg.
+                          Temukan pratinjau buku digital dan pesan edisi cetak berkualitas ke Abook Store.
                         </p>
                       </div>
                     </div>
@@ -380,7 +380,7 @@ export function CatalogNews() {
                       href="/ebooks"
                       className="px-5 py-2.5 rounded-xl bg-espresso-deep hover:bg-olive-umber text-ivory-bright text-xs font-semibold shrink-0 transition-colors flex items-center justify-center gap-1.5 shadow-sm"
                     >
-                      <span>Jelajahi Semua E-Book</span>
+                      <span>Buka Katalog Google Books</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
