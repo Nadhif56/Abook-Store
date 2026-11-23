@@ -39,12 +39,13 @@ Posisi saat ini: **Step 4 - Toko Buku Hybrid (Digital Gutendex & Fisik) Selesai*
   - [x] Proteksi Server & Validasi Data Pesanan (Autentikasi sesi, isolasi akses per-user, validasi admin)
   - [x] QA & Pengujian E2E Otomatis Berhasil Lolos 100%
   - [x] Dikonfirmasi pengguna
-- [x] FITUR EKSTRA - Toko Buku Hybrid (Google Books Preview & Cetak Fisik)
-  - [x] Integrasi Google Books API & Koleksi Kurasi Pratinjau Resmi Bebas 404
-  - [x] Halaman Eksplorasi Buku (`/ebooks`) dengan live search dan filter kategori
-  - [x] Master Toggle di Beranda (Buku Cetak Fisik vs Google Books Preview)
-  - [x] Fitur Baca Pratinjau Google Books resmi & Pesan Versi Cetak Fisik
-  - [x] Integrasi Buku Digital ke Form Pemesanan & Pembayaran QRIS (`/pesan`)
+- [x] FITUR TOKO BUKU MURNI - Katalog Lengkap & Mandiri (Bebas Ketergantungan API Luar)
+  - [x] Pembersihan total seluruh dependensi pihak ketiga (Gutendex & Google Books API)
+  - [x] Katalog 24+ judul buku terlaris & kurasi berkualitas di `src/config/site.ts`
+  - [x] Filter kategori buku lengkap (Pengembangan Diri, Sastra & Fiksi, Non-Fiksi & Sejarah, Bisnis, Agama, Edukasi)
+  - [x] Pencarian langsung (live search) responsif berdasarkan judul, penulis, dan deskripsi
+  - [x] Alur checkout langsung via QRIS (`/pesan`) dan WhatsApp direct order
+  - [x] Banner layanan "Titip Cari Buku" via WhatsApp untuk judul buku khusus
   - [x] Integrasi Google OAuth 2.0 Akun Resmi (Google Cloud Client ID & Secret)
   - [x] Pembaruan Nomor Resmi WhatsApp & Telepon Toko (`082312633697`)
 - [ ] STEP 4 - Deploy & maintenance
